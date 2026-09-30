@@ -6,11 +6,14 @@ import TableItem from "./TableItem";
 function GameTable({ tableItems }) {
   return (
     <>
-      <Container className="center">
-        <Row className="w-100 text-center">
+      <Container className="vh-100 d-flex flex-column justify-content-center align-items-center px-4">
+        <Row className="w-100 g-1 mb-1" >
           {tableItems.map((catItem, i) => (
-            <Col key={`game-table-${catItem}-${i}`} className="text-center">
-              {catItem.categoryName}
+            <Col
+              key={`game-table-${catItem}-${i}`}
+              className={`card-column-${i}`}
+            >
+              <div className="category-header">{catItem.categoryName}</div>
             </Col>
           ))}
         </Row>
@@ -27,13 +30,29 @@ function GameTable({ tableItems }) {
       currColId = 0;
     const renderedElements = [];
     for (let i = 0; i < rowCount; i++) {
-        const listElements = [];
-        for (let j = 0; j < colCount; j++) {
-            listElements.push(<TableItem key={`game-table-items-list-${tableItems[j].categoryName}-${i}`} 
-                item={tableItems[j].items[i]}></TableItem>);
-        }
+      const overlayOpacity = Math.max(0, 0.5 - i * 0.125);
+      const isLastRow = i === rowCount - 1;
+      const listElements = [];
 
-        renderedElements.push(<Row md="w-100 text-center" key={`game-table-items-${i}`}>{listElements}</Row>);
+      for (let j = 0; j < colCount; j++) {
+        listElements.push(
+          <TableItem
+            key={`game-table-items-list-${tableItems[j].categoryName}-${i}`}
+            item={tableItems[j].items[i]}
+            index={j}
+            overlayOpacity={overlayOpacity}
+          ></TableItem>,
+        );
+      }
+
+      renderedElements.push(
+        <Row
+          className={`w-100 g-1 mb-1 ${isLastRow ? "row-last" : ""}`}
+          key={`game-table-items-${i}`}
+        >
+          {listElements}
+        </Row>,
+      );
     }
 
     return renderedElements;

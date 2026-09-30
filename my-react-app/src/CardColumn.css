@@ -1,0 +1,57 @@
+
+/* --- OVERRIDES & TEXT FORMATTING --- */
+[class^="card-column-"] button {
+  font-size: 2.5rem;
+  /* Force golden text and heavy shadows */
+  color: #ffd700 !important; 
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.8), 3px 3px 0px rgba(0,0,0,0.6) !important;
+  border: none !important;
+  /* Square inner corners */
+  border-radius: 0 !important; 
+  cursor: pointer;
+}
+
+[class^="card-column-"] .category-header {
+  padding: 1rem 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+  /* Force dark uppercase text */
+  color: #1a1a24 !important; 
+  text-transform: uppercase;
+  border-radius: 0 !important; 
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- BASE COLORS --- */
+.card-column-0 .category-header { background-color: #f7a05d !important; }
+.card-column-0 button { background-color: #d17a45 !important; }
+
+.card-column-1 .category-header { background-color: #63d0a2 !important; }
+.card-column-1 button { background-color: #439f76 !important; }
+
+.card-column-2 .category-header { background-color: #e587f5 !important; }
+.card-column-2 button { background-color: #a463a8 !important; }
+
+.card-column-3 .category-header { background-color: #6aade4 !important; }
+.card-column-3 button { background-color: #4a7fae !important; }
+
+.card-column-4 .category-header { background-color: #f1728b !important; }
+.card-column-4 button { background-color: #a14159 !important; }
+
+/* --- SPECIFIC CORNER RULES --- */
+/* Target only the 4 extreme corners of the grid to match the reference */
+.card-column-0 .category-header {
+  border-top-left-radius: 8px !important;
+}
+.card-column-4 .category-header {
+  border-top-right-radius: 8px !important;
+}
+.row-last .card-column-0 button {
+  border-bottom-left-radius: 8px !important;
+}
+.row-last .card-column-4 button {
+  border-bottom-right-radius: 8px !important;
+}

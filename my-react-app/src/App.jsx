@@ -1,6 +1,7 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import "./CardColumn.css";
 import Button from "react-bootstrap/Button";
 import GameTable from "./components/GameTable";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,7 +11,6 @@ function App() {
   const [tableItems, setTableItems] = useState([
     {
       categoryName: "History And Geography",
-      color: "#9fa1d9",
       items: [
         { price: 100 },
         { price: 200 },
@@ -21,7 +21,6 @@ function App() {
     },
     {
       categoryName: "Science and Nature",
-      color: "#9fa1d9",
       items: [
         { price: 100 },
         { price: 200 },
@@ -32,7 +31,6 @@ function App() {
     },
         {
       categoryName: "Pop Culture",
-      color: "#9fa1d9",
       items: [
         { price: 100 },
         { price: 200 },
@@ -43,7 +41,6 @@ function App() {
     },
         {
       categoryName: "Nastya",
-      color: "#9fa1d9",
       items: [
         { price: 100 },
         { price: 200 },
@@ -54,7 +51,6 @@ function App() {
     },
         {
       categoryName: "Test",
-      color: "#9fa1d9",
       items: [
         { price: 100 },
         { price: 200 },
@@ -68,7 +64,7 @@ function App() {
   return (
     <>
       <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
-        <h1 className="container">Gaukhar's Special Party!</h1>
+        <h1 className="mb-4 text-white fw-bold tracking-wide">Gaukhar's Special Party!</h1>
         {isGameStarted ? (
           <GameTable tableItems={tableItems}></GameTable>
         ) : (
