@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import "./CardColumn.css";
+import "./TableButtonHover.css";
 import Button from "react-bootstrap/Button";
 import GameTable from "./components/GameTable";
 import "bootstrap/dist/css/bootstrap.min.css";

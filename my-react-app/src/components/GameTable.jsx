@@ -6,7 +6,7 @@ import TableItem from "./TableItem";
 function GameTable({ tableItems }) {
   return (
     <>
-      <Container className="vh-100 d-flex flex-column justify-content-center align-items-center px-4">
+      <Container className="game-board vh-100 d-flex flex-column justify-content-center align-items-center px-4">
         <Row className="w-100 g-1 mb-1" >
           {tableItems.map((catItem, i) => (
             <Col

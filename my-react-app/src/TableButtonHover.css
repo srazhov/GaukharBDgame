@@ -1,0 +1,93 @@
+/* Container creates the 3D perspective and grid */
+.container-button {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+    "bt-1 bt-2 bt-3"
+    "bt-4 bt-5 bt-6";
+  position: relative;
+  perspective: 800px;
+  width: 100%;
+  height: 90px; /* Required fixed height because button is absolutely positioned */
+}
+
+.container-button:active {
+  transform: scale(0.95);
+}
+
+/* Hitboxes: Removed position:absolute so they actually fill the grid cells */
+.hover {
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  cursor:pointer;
+}
+
+.bt-1 { grid-area: bt-1; }
+.bt-2 { grid-area: bt-2; }
+.bt-3 { grid-area: bt-3; }
+.bt-4 { grid-area: bt-4; }
+.bt-5 { grid-area: bt-5; }
+.bt-6 { grid-area: bt-6; }
+
+/* The actual button sits underneath the hitboxes */
+[class*="card-column-"] .container-button button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  padding: 0; 
+}
+
+/* Reads the 'data-price' attribute from React to render and animate the text */
+[class*="card-column-"] .container-button button::after {
+  content: attr(data-price);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out;
+}
+
+/* 3D Tilt Logic based on which hitbox is hovered */
+.bt-1:hover ~ button { transform: rotateX(15deg) rotateY(-15deg); }
+.bt-3:hover ~ button { transform: rotateX(15deg) rotateY(15deg); }
+.bt-4:hover ~ button { transform: rotateX(-15deg) rotateY(-15deg); }
+.bt-6:hover ~ button { transform: rotateX(-15deg) rotateY(15deg); }
+
+/* Text Animations on Hover */
+.bt-1:hover ~ button::after,
+.bt-3:hover ~ button::after,
+.bt-4:hover ~ button::after,
+.bt-6:hover ~ button::after {
+  animation: shake 0.5s ease-in-out 0.3s;
+}
+
+.hover:hover ~ button::after {
+  content: "Click"; /* Changes text just like the original Uiverse snippet */
+  top: -25%; 
+  color: #ffda0b
+}
+
+@keyframes shake {
+  0%   { left: 45%; }
+  25%  { left: 54%; }
+  50%  { left: 48%; }
+  75%  { left: 52%; }
+  100% { left: 50%; }
+}
+
+/* Dims all non-hovered buttons inside the game board only */
+.game-board:has(.container-button:hover) .container-button:not(:hover) button {
+  filter: brightness(0.8); 
+}
+
+/* Brightens and elevates the currently hovered button */
+.game-board:has(.container-button:hover) .container-button:hover button {
+  filter: brightness(1.1);
+  z-index: 50;
+}
