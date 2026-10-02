@@ -1,4 +1,4 @@
-const getTableItems = () => {
+function getTableItems() {
   return [
     {
       categoryName: "History And Geography",
@@ -177,3 +177,5 @@ const getTableItems = () => {
     },
   ];
 };
+
+export default getTableItems;

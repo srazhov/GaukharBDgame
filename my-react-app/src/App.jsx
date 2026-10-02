@@ -7,6 +7,7 @@ import "./CardModal.css";
 import Button from "react-bootstrap/Button";
 import GameTable from "./components/GameTable";
 import "bootstrap/dist/css/bootstrap.min.css";
+import getTableItems from "./data";
 
 function App() {
   const [isGameStarted, setIsGameStarted] = useState(false);
