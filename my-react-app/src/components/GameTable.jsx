@@ -21,7 +21,7 @@ function GameTable({ tableItems }) {
         show={showModal}
         onClose={() => setShowModal(false)}
       ></Card>
-      <Container className="game-board vh-100 justify-content-center align-items-center px-4">
+      <Container className="game-board justify-content-center align-items-center px-4">
         <Row className="w-100 g-1 mb-1">
           {tableItems.map((catItem, i) => (
             <Col
