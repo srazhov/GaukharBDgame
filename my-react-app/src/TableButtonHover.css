@@ -69,7 +69,7 @@
 
 .hover:hover ~ button::after {
   content: "Click"; /* Changes text just like the original Uiverse snippet */
-  top: -25%; 
+  top: -4%; 
   color: #ffda0b
 }
 
