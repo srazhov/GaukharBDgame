@@ -1,3 +1,5 @@
+import "../styles/GameContainer.css";
+
 import { useEffect, useState } from "react";
 import GameTable from "./GameTable";
 import Card from "./Card";
@@ -6,6 +8,7 @@ import {
   UpdateSelectedOption,
   CalculateTotalScore,
 } from "../helpers/GameDataManipulation";
+import VerticalProgressBar from "./VerticalProgressBar";
 
 export function GameManagementContainer() {
   const [tableItems, setTableItems] = useState(GetTableItems());
@@ -38,11 +41,18 @@ export function GameManagementContainer() {
         handleOptionSelected={handleOptionSelected}
         onClose={() => setShowModal(false)}
       ></Card>
-      <GameTable
-        tableItems={tableItems}
-        handleOptionSelected={handleOptionSelected}
-        handleTileClick={handleTileClick}
-      ></GameTable>
+      <div className="game-layout">
+        <div className="grid-section">
+          <GameTable
+            tableItems={tableItems}
+            handleOptionSelected={handleOptionSelected}
+            handleTileClick={handleTileClick}
+          ></GameTable>
+        </div>
+        <div className="sidebar-section">
+          <VerticalProgressBar />
+        </div>
+      </div>
     </>
   );
 }

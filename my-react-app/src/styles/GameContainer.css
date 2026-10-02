@@ -1,0 +1,12 @@
+.game-layout {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+.sidebar-section {
+    position: absolute;
+    left: 40px;
+}

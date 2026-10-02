@@ -188,3 +188,7 @@ body {
   color: #cdd6f4!important; 
   margin: 0!important; 
 }
+
+.header-title-text {
+  padding: 30px 0 10px 0;
+}
