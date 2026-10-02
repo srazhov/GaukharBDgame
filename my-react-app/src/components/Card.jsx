@@ -10,6 +10,15 @@ function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
     onClose();
   };
 
+  const getBtnStatus = (btnIndex) => {
+    if (activeModalItem?.item.selectedOption != null && (btnIndex + 1) == activeModalItem.item.selectedOption) {
+      return activeModalItem.item.selectedOption == activeModalItem.item.answer
+        ? "jeopardy-answer-btn-correct"
+        : "jeopardy-answer-btn-incorrect";
+    }
+    return "test";
+  };
+
   return (
     <>
       <Modal
@@ -26,7 +35,7 @@ function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
             {activeModalItem?.item.options.map((text, index) => (
               <button
                 key={`jeopardy-btn-key-${index}`}
-                className="jeopardy-answer-btn"
+                className={`jeopardy-answer-btn ${getBtnStatus(index)}`}
                 onClick={() => handleOptionClick(index + 1)}
               >
                 {text}

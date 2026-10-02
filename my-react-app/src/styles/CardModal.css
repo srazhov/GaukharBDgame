@@ -44,6 +44,20 @@
     width: 100%;
 }
 
+.jeopardy-answer-btn-correct {
+    background-color: #4ade80 !important;
+    color: #064e3b !important;
+    border: 2px solid #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+.jeopardy-answer-btn-incorrect {
+    background-color: #f87171 !important;
+    color: #450a0a !important;
+    border: 2px solid #ffffff !important;
+    transition: all 0.3s ease;
+}
+
 /* 5. Style the individual yellow option buttons */
 .jeopardy-answer-btn {
     flex: 1;
