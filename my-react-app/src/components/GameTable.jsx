@@ -2,26 +2,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TableItem from "./TableItem";
-import { useState } from "react";
-import Card from "./Card";
 
-function GameTable({ tableItems, handleOptionSelected }) {
-  const [showModal, setShowModal] = useState(false);
-  const [activeModalItem, setActiveModalItem] = useState(null);
-
-  const handleTileClick = (item, catIndex, itemIndex) => {
-    setActiveModalItem({ item: item, categoryId: catIndex, itemId: itemIndex });
-    setShowModal(true);
-  };
-
+function GameTable({ tableItems, handleTileClick }) {
   return (
     <>
-      <Card
-        activeModalItem={activeModalItem}
-        show={showModal}
-        handleOptionSelected={handleOptionSelected}
-        onClose={() => setShowModal(false)}
-      ></Card>
       <Container className="game-board justify-content-center align-items-center px-4">
         <Row className="w-100 g-1 mb-1">
           {tableItems.map((catItem, i) => (

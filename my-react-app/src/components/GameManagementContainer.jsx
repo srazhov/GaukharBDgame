@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import GameTable from "./GameTable";
+import Card from "./Card";
 import {
   GetTableItems,
   UpdateSelectedOption,
@@ -12,6 +13,14 @@ export function GameManagementContainer() {
     const total = CalculateTotalScore(tableItems);
   }, [tableItems]);
 
+  const [showModal, setShowModal] = useState(false);
+  const [activeModalItem, setActiveModalItem] = useState(null);
+
+  const handleTileClick = (item, catIndex, itemIndex) => {
+    setActiveModalItem({ item: item, categoryId: catIndex, itemId: itemIndex });
+    setShowModal(true);
+  };
+
   const handleOptionSelected = (categoryIndex, itemIndex, selectedOption) => {
     UpdateSelectedOption(
       setTableItems,
@@ -23,9 +32,16 @@ export function GameManagementContainer() {
 
   return (
     <>
+      <Card
+        activeModalItem={activeModalItem}
+        show={showModal}
+        handleOptionSelected={handleOptionSelected}
+        onClose={() => setShowModal(false)}
+      ></Card>
       <GameTable
         tableItems={tableItems}
         handleOptionSelected={handleOptionSelected}
+        handleTileClick={handleTileClick}
       ></GameTable>
     </>
   );
