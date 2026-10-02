@@ -1,0 +1,66 @@
+/* Force the modal wrapper to expand across the screen */
+.jeopardy-modal {
+    max-width: 60vw !important;
+    /* 90% of the viewport width */
+    width: 1200px !important;
+    /* Hard cap for very large screens */
+}
+
+/* Ensure the content box fills that new width */
+.jeopardy-modal .modal-content {
+    background-color: #efa45d;
+    border: none;
+    border-radius: 0;
+    padding: 4rem 3rem;
+    min-height: 50vh;
+    width: 100%;
+}
+
+/* 2. Center everything inside the modal body */
+.jeopardy-modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* 3. Style the main question text */
+.jeopardy-question {
+    color: #1a1a24;
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    max-width: 900px;
+}
+
+/* 4. Flexbox container to space out the buttons evenly */
+.jeopardy-answers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* 5. Style the individual yellow option buttons */
+.jeopardy-answer-btn {
+    flex: 1;
+    /* Forces all buttons to be the exact same width */
+    background-color: #fde071;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    color: #1a1a24;
+    font-size: 1.3rem;
+    padding: 2.5rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.jeopardy-answer-btn:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}

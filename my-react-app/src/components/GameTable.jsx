@@ -2,12 +2,27 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TableItem from "./TableItem";
+import { useState } from "react";
+import Card from "./Card";
 
 function GameTable({ tableItems }) {
+  const [showModal, setShowModal] = useState(false);
+  const [activeModalItem, setActiveModalItem] = useState(null);
+
+  const handleTileClick = (item) => {
+    setActiveModalItem(item);
+    setShowModal(true);
+  };
+
   return (
     <>
-      <Container className="game-board vh-100 d-flex flex-column justify-content-center align-items-center px-4">
-        <Row className="w-100 g-1 mb-1" >
+      <Card
+        item={activeModalItem}
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      ></Card>
+      <Container className="game-board vh-100 justify-content-center align-items-center px-4">
+        <Row className="w-100 g-1 mb-1">
           {tableItems.map((catItem, i) => (
             <Col
               key={`game-table-${catItem}-${i}`}
@@ -26,8 +41,6 @@ function GameTable({ tableItems }) {
     const rowCount = tableItems[0].items.length;
     const colCount = tableItems.length;
 
-    let currRowId = 0,
-      currColId = 0;
     const renderedElements = [];
     for (let i = 0; i < rowCount; i++) {
       const overlayOpacity = Math.max(0, 0.5 - i * 0.125);
@@ -41,6 +54,7 @@ function GameTable({ tableItems }) {
             item={tableItems[j].items[i]}
             index={j}
             overlayOpacity={overlayOpacity}
+            onClick={handleTileClick}
           ></TableItem>,
         );
       }

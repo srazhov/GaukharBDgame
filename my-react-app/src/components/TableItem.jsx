@@ -1,11 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
-function TableItem({ item, index, overlayOpacity }) {
+function TableItem({ item, index, overlayOpacity, onClick }) {
   return (
     <>
       <Col className={`card-column-${index} w-100 text-center`}>
-        <div className="container-button">
+        <div className="container-button" onClick={() => onClick(item)}>
           <div className="hover bt-1"></div>
           <div className="hover bt-2"></div>
           <div className="hover bt-3"></div>
@@ -19,6 +19,7 @@ function TableItem({ item, index, overlayOpacity }) {
             style={{
               backgroundImage: `linear-gradient(rgba(0,0,0,${overlayOpacity}), rgba(0,0,0,${overlayOpacity}))`,
             }}
+            onClick={onClick}
           />
         </div>
       </Col>
