@@ -16,7 +16,7 @@ function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
         ? "jeopardy-answer-btn-correct"
         : "jeopardy-answer-btn-incorrect";
     }
-    return "test";
+    return "";
   };
 
   return (
