@@ -2,10 +2,23 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
 function TableItem({ item, index, overlayOpacity, onClick }) {
+  const getItemStatusStyle = () => {
+    if (item.selectedOption != null) {
+      return item.selectedOption == item.answer
+        ? "option-chosen-correct"
+        : "option-choosable option-chosen-incorrect";
+    }
+
+    return "option-choosable";
+  };
+
   return (
     <>
       <Col className={`card-column-${index} w-100 text-center`}>
-        <div className="container-button" onClick={() => onClick(item)}>
+        <div
+          className={`container-button ${getItemStatusStyle()}`}
+          onClick={() => onClick(item)}
+        >
           <div className="hover bt-1"></div>
           <div className="hover bt-2"></div>
           <div className="hover bt-3"></div>

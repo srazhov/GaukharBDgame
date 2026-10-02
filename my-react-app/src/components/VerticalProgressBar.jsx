@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "../styles/VerticalProgressBar.css";
 
 const GiftIcon = () => (
@@ -13,8 +12,10 @@ const HeartIcon = () => (
   </svg>
 );
 
-export default function VerticalProgressBar() {
-  const [progress, setProgress] = useState(65);
+export default function VerticalProgressBar({ currentScore, maxScore }) {
+  const getProgress = () => {
+    return Math.round((currentScore / maxScore) * 100);
+  };
 
   const milestones = [
     { percent: 25, label: "Milestone 1" },
@@ -25,11 +26,14 @@ export default function VerticalProgressBar() {
 
   return (
     <div className="progress-container">
-      <div className="progress-header">Current Progress: {progress}%</div>
+      <div className="progress-header">Current Progress: {getProgress()}%</div>
 
       <div className="progress-track">
         {/* The animated bar's height must remain inline because it's dynamic state */}
-        <div className="progress-fill" style={{ height: `${progress}%` }} />
+        <div
+          className="progress-fill"
+          style={{ height: `${getProgress()}%` }}
+        />
 
         {milestones.map((milestone) => (
           <div
@@ -47,21 +51,6 @@ export default function VerticalProgressBar() {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="controls">
-        <button
-          className="btn"
-          onClick={() => setProgress((p) => Math.max(0, p - 10))}
-        >
-          Decrease
-        </button>
-        <button
-          className="btn btn-primary"
-          onClick={() => setProgress((p) => Math.min(100, p + 10))}
-        >
-          Increase
-        </button>
       </div>
     </div>
   );

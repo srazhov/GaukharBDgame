@@ -54,20 +54,20 @@
 }
 
 /* 3D Tilt Logic based on which hitbox is hovered */
-.bt-1:hover ~ button { transform: rotateX(15deg) rotateY(-15deg); }
-.bt-3:hover ~ button { transform: rotateX(15deg) rotateY(15deg); }
-.bt-4:hover ~ button { transform: rotateX(-15deg) rotateY(-15deg); }
-.bt-6:hover ~ button { transform: rotateX(-15deg) rotateY(15deg); }
+.option-choosable .bt-1:hover ~ button { transform: rotateX(15deg) rotateY(-15deg); }
+.option-choosable .bt-3:hover ~ button { transform: rotateX(15deg) rotateY(15deg); }
+.option-choosable .bt-4:hover ~ button { transform: rotateX(-15deg) rotateY(-15deg); }
+.option-choosable .bt-6:hover ~ button { transform: rotateX(-15deg) rotateY(15deg); }
 
 /* Text Animations on Hover */
-.bt-1:hover ~ button::after,
-.bt-3:hover ~ button::after,
-.bt-4:hover ~ button::after,
-.bt-6:hover ~ button::after {
+.option-choosable .bt-1:hover ~ button::after,
+.option-choosable .bt-3:hover ~ button::after,
+.option-choosable .bt-4:hover ~ button::after,
+.option-choosable .bt-6:hover ~ button::after {
   animation: shake 0.5s ease-in-out 0.3s;
 }
 
-.hover:hover ~ button::after {
+.option-choosable .hover:hover ~ button::after {
   content: "Click"; /* Changes text just like the original Uiverse snippet */
   top: -4%; 
   color: #ffda0b
@@ -90,4 +90,12 @@
 .game-board:has(.container-button:hover) .container-button:hover button {
   filter: brightness(1.1);
   z-index: 50;
+}
+
+.option-chosen-incorrect button {
+  background-color: #d50808!important;
+}
+
+.option-chosen-correct button {
+  background-color: #14dc06!important;
 }

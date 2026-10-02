@@ -6,14 +6,18 @@ import Card from "./Card";
 import {
   GetTableItems,
   UpdateSelectedOption,
+  CalculateEarnedScore,
   CalculateTotalScore,
 } from "../helpers/GameDataManipulation";
 import VerticalProgressBar from "./VerticalProgressBar";
 
 export function GameManagementContainer() {
   const [tableItems, setTableItems] = useState(GetTableItems());
+  const [totalScore, _] = useState(CalculateTotalScore(tableItems));
+  const [earnedScore, setEarnedScore] = useState(0);
+
   useEffect(() => {
-    const total = CalculateTotalScore(tableItems);
+    setEarnedScore(CalculateEarnedScore(tableItems));
   }, [tableItems]);
 
   const [showModal, setShowModal] = useState(false);
@@ -50,7 +54,10 @@ export function GameManagementContainer() {
           ></GameTable>
         </div>
         <div className="sidebar-section">
-          <VerticalProgressBar />
+          <VerticalProgressBar
+            currentScore={earnedScore}
+            maxScore={totalScore}
+          />
         </div>
       </div>
     </>

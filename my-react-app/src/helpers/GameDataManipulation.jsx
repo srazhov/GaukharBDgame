@@ -29,13 +29,24 @@ export function UpdateSelectedOption(
   );
 }
 
-export function CalculateTotalScore(tableItems) {
+export function CalculateEarnedScore(tableItems) {
   let total = 0;
   tableItems.forEach((cat) => {
     cat.items.forEach((item) => {
       if (item.selectedOption != null && item.selectedOption == item.answer) {
         total += item.price;
       }
+    });
+  });
+
+  return total;
+}
+
+export function CalculateTotalScore(tableItems) {
+  let total = 0;
+  tableItems.forEach((cat) => {
+    cat.items.forEach((item) => {
+      total += item.price;
     });
   });
 
