@@ -1,0 +1,52 @@
+[
+  {
+    "categoryName": "History And Geography",
+    "items": [
+      { "price": 100, "question": "test 100", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 200, "question": "test 200", "answer": 2, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 300, "question": "test 300", "answer": 3, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 400, "question": "test 400", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 500, "question": "test 500", "answer": 2, "options": ["a", "b", "c"], "selectedOption": null }
+    ]
+  },
+  {
+    "categoryName": "Science and Nature",
+    "items": [
+      { "price": 100, "question": "test 100", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 200, "question": "test 200", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 300, "question": "test 300", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 400, "question": "test 400", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 500, "question": "test 500", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null }
+    ]
+  },
+  {
+    "categoryName": "Pop Culture",
+    "items": [
+      { "price": 100, "question": "test 100", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 200, "question": "test 200", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 300, "question": "test 300", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 400, "question": "test 400", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 500, "question": "test 500", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null }
+    ]
+  },
+  {
+    "categoryName": "Nastya",
+    "items": [
+      { "price": 100, "question": "test 100", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 200, "question": "test 200", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 300, "question": "test 300", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 400, "question": "test 400", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 500, "question": "test 500", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null }
+    ]
+  },
+  {
+    "categoryName": "Test",
+    "items": [
+      { "price": 100, "question": "test 100", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 200, "question": "test 200", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 300, "question": "test 300", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 400, "question": "test 400", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null },
+      { "price": 500, "question": "test 500", "answer": 1, "options": ["a", "b", "c"], "selectedOption": null }
+    ]
+  }
+]

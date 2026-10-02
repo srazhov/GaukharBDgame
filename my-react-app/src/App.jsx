@@ -5,13 +5,12 @@ import "./CardColumn.css";
 import "./TableButtonHover.css";
 import "./CardModal.css";
 import Button from "react-bootstrap/Button";
-import GameTable from "./components/GameTable";
 import "bootstrap/dist/css/bootstrap.min.css";
-import getTableItems from "./data";
+
+import { GameManagementContainer } from "./components/GameManagementContainer";
 
 function App() {
   const [isGameStarted, setIsGameStarted] = useState(false);
-  const [tableItems, setTableItems] = useState(getTableItems());
 
   return (
     <>
@@ -22,9 +21,7 @@ function App() {
             Gaukhar's Special Party!
           </h1>
           {isGameStarted ? (
-            <div>
-              <GameTable tableItems={tableItems}></GameTable>
-            </div>
+            <GameManagementContainer />
           ) : (
             <div className="d-flex justify-content-center">
               <Button onClick={() => setIsGameStarted(true)}>Start game</Button>

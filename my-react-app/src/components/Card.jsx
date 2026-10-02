@@ -1,12 +1,12 @@
 import Modal from "react-bootstrap/Modal";
 
-function Card({ item, show, onClose, onSuccess, onFailure }) {
+function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
   const handleOptionClick = (selectedOption) => {
-    if (selectedOption == item.answer) {
-      alert("correct");
-    } else {
-      alert(`incorrect. Answer is: ${item.answer}`);
-    }
+    handleOptionSelected(
+      activeModalItem.categoryId,
+      activeModalItem.itemId,
+      selectedOption,
+    );
     onClose();
   };
 
@@ -19,26 +19,19 @@ function Card({ item, show, onClose, onSuccess, onFailure }) {
         dialogClassName="jeopardy-modal"
       >
         <Modal.Body className="jeopardy-modal-body">
-          <h2 className="jeopardy-question">{item?.question}</h2>
+          <h2 className="jeopardy-question">
+            {activeModalItem?.item.question}
+          </h2>
           <div className="jeopardy-answers">
-            <button
-              className="jeopardy-answer-btn"
-              onClick={() => handleOptionClick(1)}
-            >
-              {item?.options[0]}
-            </button>
-            <button
-              className="jeopardy-answer-btn"
-              onClick={() => handleOptionClick(2)}
-            >
-              {item?.options[1]}
-            </button>
-            <button
-              className="jeopardy-answer-btn"
-              onClick={() => handleOptionClick(3)}
-            >
-              {item?.options[2]}
-            </button>
+            {activeModalItem?.item.options.map((text, index) => (
+              <button
+                key={`jeopardy-btn-key-${index}`}
+                className="jeopardy-answer-btn"
+                onClick={() => handleOptionClick(index + 1)}
+              >
+                {text}
+              </button>
+            ))}
           </div>
         </Modal.Body>
       </Modal>
