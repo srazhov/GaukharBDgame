@@ -1,9 +1,9 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import "./App.css";
-import "./CardColumn.css";
-import "./TableButtonHover.css";
-import "./CardModal.css";
+import "./styles/App.css";
+import "./styles/CardColumn.css";
+import "./styles/CardModal.css";
+import "./styles/TableButtonHover.css";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
