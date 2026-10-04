@@ -1,4 +1,5 @@
 import Modal from "react-bootstrap/Modal";
+import VideoPlayer from "./VideoPlayer";
 
 function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
   const handleOptionClick = (selectedOption) => {
@@ -11,7 +12,10 @@ function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
   };
 
   const getBtnStatus = (btnIndex) => {
-    if (activeModalItem?.item.selectedOption != null && (btnIndex + 1) == activeModalItem.item.selectedOption) {
+    if (
+      activeModalItem?.item.selectedOption != null &&
+      btnIndex + 1 == activeModalItem.item.selectedOption
+    ) {
       return activeModalItem.item.selectedOption == activeModalItem.item.answer
         ? "jeopardy-answer-btn-correct"
         : "jeopardy-answer-btn-incorrect";
@@ -31,6 +35,13 @@ function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
           <h2 className="jeopardy-question">
             {activeModalItem?.item.question}
           </h2>
+          {activeModalItem?.item.videoLink && (
+            <div
+              style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}
+            >
+              <VideoPlayer videoPath={activeModalItem.item.videoLink} />
+            </div>
+          )}
           <div className="jeopardy-answers">
             {activeModalItem?.item.options.map((text, index) => (
               <button

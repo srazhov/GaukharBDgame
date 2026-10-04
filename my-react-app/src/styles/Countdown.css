@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+.countdown-wrapper {
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+
+    /* A static background color for the circle so the white text is visible */
+    background-color: hsl(160, 80, 60);
+    border-radius: 50%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    /* Mobile sizes (scaled 1.5x) */
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 0 4px, inset 8px 8px 15px rgba(0, 0, 0, 0.125), 8px 8px 15px rgba(0, 0, 0, 0.125);
+    font-size: 75px;
+    text-shadow: 8px 8px 15px rgba(0, 0, 0, 0.125);
+}
+
+.countdown-number {
+    position: relative;
+    z-index: 10;
+    animation: timer_beat 1s infinite;
+}
+
+.countdown-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.125);
+    /* The indicator slides down over exactly 3 seconds */
+    animation: timer_indicator 3s linear forwards;
+}
+
+/* Beat animation applied every second */
+@keyframes timer_beat {
+
+    40%,
+    80% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale(1.125);
+    }
+}
+
+/* Sliding overlay animation */
+@keyframes timer_indicator {
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Desktop sizing */
+@media (min-width: 600px) {
+    .countdown-container {
+        width: 100px;
+        height: 100px;
+        box-shadow: 0 0 0 2px, inset 5px 5px 10px rgba(0, 0, 0, 0.125), 5px 5px 10px rgba(0, 0, 0, 0.125);
+        font-size: 50px;
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.125);
+    }
+}
