@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Countdown from "./Countdown";
 
-const VideoPlayer = ({ videoPath }) => {
+const VideoPlayer = ({ videoPath, showCountdown }) => {
   const [videoReady, setVideoReady] = useState(false);
   const fullPath = `/video/${videoPath}`;
   const videoRef = useRef(null);
@@ -18,8 +18,8 @@ const VideoPlayer = ({ videoPath }) => {
 
   return (
     <div className="video-container">
-      <Countdown onComplete={handleCountdownCompleted} startFrom={3} />
-      {videoReady && (
+      {showCountdown && <Countdown onComplete={handleCountdownCompleted} startFrom={3} />}
+      {(!showCountdown || videoReady) && (
         <video ref={videoRef} width="640" height="360" controls>
           <source src={fullPath} type="video/mp4" />
           Your browser does not support the video tag.

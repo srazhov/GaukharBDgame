@@ -30,6 +30,7 @@ function Card({
       } else if (btnIndex + 1 == activeModalItem.item.answer) {
         return "jeopardy-answer-btn-outlined";
       }
+
     return "";
   };
 
@@ -49,7 +50,10 @@ function Card({
             <div
               style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}
             >
-              <VideoPlayer videoPath={activeModalItem.item.videoLink} />
+              <VideoPlayer
+                showCountdown={!selectedOption}
+                videoPath={activeModalItem.item.videoLink}
+              />
             </div>
           )}
           <div className="jeopardy-answers">

@@ -12,6 +12,14 @@ import { GameManagementContainer } from "./components/GameManagementContainer";
 function App() {
   const [isGameStarted, setIsGameStarted] = useState(false);
 
+  const handleTryAgain = () => {
+    const userConfirmed = window.confirm("Are you sure?");
+    
+    if (userConfirmed) {
+      localStorage.clear();
+    }
+  };
+
   return (
     <>
       <title>Lovely girls BD page!</title>
@@ -23,8 +31,16 @@ function App() {
           {isGameStarted ? (
             <GameManagementContainer />
           ) : (
-            <div className="d-flex justify-content-center">
+            <div className="d-flex flex-column justify-content-center">
               <Button onClick={() => setIsGameStarted(true)}>Start game</Button>
+              <Button
+                type="button"
+                variant="danger"
+                className="mt-3"
+                onClick={handleTryAgain}
+              >
+                Try again
+              </Button>
             </div>
           )}
         </div>

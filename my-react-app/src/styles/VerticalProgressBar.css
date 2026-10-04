@@ -6,13 +6,13 @@
   font-family: sans-serif;
 }
 
-.progress-header {
+.progress-container .progress-header {
   margin-bottom: 20px;
   font-size: 18px;
   font-weight: bold;
 }
 
-.progress-track {
+.progress-container .progress-track {
   position: relative;
   height: 500px;
   width: 24px;
@@ -21,7 +21,7 @@
   margin: 20px 0;
 }
 
-.progress-fill {
+.progress-container .progress-fill {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -30,13 +30,13 @@
   transition: height 0.5s ease-out;
 }
 
-.milestone {
+.progress-container .milestone {
   position: absolute;
   width: 100%;
   transform: translateY(50%);
 }
 
-.milestone-icon {
+.progress-container .milestone-icon {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -53,36 +53,36 @@
 }
 
 /* Constrain the SVG size here instead of inline */
-.milestone-icon svg {
+.progress-container .milestone-icon svg {
   width: 28px;
   height: 28px;
 }
 
-.milestone-text {
+.progress-container .milestone-text {
   position: absolute;
   left: 60px;
   white-space: nowrap;
 }
 
-.milestone-title {
+.progress-container .milestone-title {
   margin: 0;
   font-weight: bold;
   color: #334155;
 }
 
-.milestone-subtitle {
+.progress-container .milestone-subtitle {
   margin: 0;
   font-size: 14px;
   color: #94a3b8;
 }
 
-.controls {
+.progress-container .controls {
   margin-top: 40px;
   display: flex;
   gap: 16px;
 }
 
-.btn {
+.progress-container .btn {
   padding: 8px 16px;
   cursor: pointer;
   border-radius: 4px;
@@ -90,7 +90,7 @@
   background-color: white;
 }
 
-.btn-primary {
+.progress-container .btn-primary {
   background-color: #3b82f6;
   color: white;
   border: none;
