@@ -13,7 +13,7 @@ function GameTable({ tableItems, handleTileClick }) {
               key={`game-table-${catItem}-${i}`}
               className={`card-column-${i}`}
             >
-              <div className="category-header">{catItem.categoryName}</div>
+              <div className={`category-header card-column-${i}-color`}>{catItem.categoryName}</div>
             </Col>
           ))}
         </Row>

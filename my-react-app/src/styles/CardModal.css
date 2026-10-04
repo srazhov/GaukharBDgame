@@ -8,7 +8,6 @@
 
 /* Ensure the content box fills that new width */
 .jeopardy-modal .modal-content {
-    background-color: #efa45d;
     border: none;
     border-radius: 0;
     padding: 4rem 3rem;

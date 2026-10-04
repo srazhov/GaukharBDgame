@@ -29,7 +29,7 @@ function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
         show={show}
         onHide={onClose}
         centered
-        dialogClassName="jeopardy-modal"
+        dialogClassName={`jeopardy-modal card-jeopardy-${activeModalItem?.categoryId}-color`}
       >
         <Modal.Body className="jeopardy-modal-body">
           <h2 className="jeopardy-question">

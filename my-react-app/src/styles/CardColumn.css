@@ -26,19 +26,24 @@
 }
 
 /* --- BASE COLORS --- */
-.card-column-0 .category-header { background-color: #f7a05d !important; }
+.card-column-0-color, 
+.card-jeopardy-0-color .modal-content { background-color: #f7a05d !important; }
 .card-column-0 button { background-color: #d17a45 !important; }
 
-.card-column-1 .category-header { background-color: #63d0a2 !important; }
+.card-column-1-color,
+.card-jeopardy-1-color .modal-content { background-color: #63d0a2 !important; }
 .card-column-1 button { background-color: #439f76 !important; }
 
-.card-column-2 .category-header { background-color: #e587f5 !important; }
+.card-column-2-color,
+.card-jeopardy-2-color .modal-content { background-color: #e587f5 !important; }
 .card-column-2 button { background-color: #a463a8 !important; }
 
-.card-column-3 .category-header { background-color: #6aade4 !important; }
+.card-column-3-color,
+.card-jeopardy-3-color .modal-content { background-color: #6aade4 !important; }
 .card-column-3 button { background-color: #4a7fae !important; }
 
-.card-column-4 .category-header { background-color: #f1728b !important; }
+.card-column-4-color,
+.card-jeopardy-4-color .modal-content { background-color: #f1728b !important; }
 .card-column-4 button { background-color: #a14159 !important; }
 
 /* --- SPECIFIC CORNER RULES --- */
