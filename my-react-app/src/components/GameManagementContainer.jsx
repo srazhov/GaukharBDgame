@@ -35,6 +35,14 @@ export function GameManagementContainer() {
       itemIndex,
       selectedOption,
     );
+
+    setActiveModalItem((prev) => ({
+      ...prev,
+      item: {
+        ...prev.item,
+        selectedOption: selectedOption,
+      },
+    }));
   };
 
   return (
@@ -44,6 +52,7 @@ export function GameManagementContainer() {
         show={showModal}
         handleOptionSelected={handleOptionSelected}
         onClose={() => setShowModal(false)}
+        notEditable={true}
       ></Card>
       <div className="game-layout">
         <div className="grid-section">

@@ -1,25 +1,35 @@
 import Modal from "react-bootstrap/Modal";
 import VideoPlayer from "./VideoPlayer";
 
-function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
+function Card({
+  activeModalItem,
+  show,
+  onClose,
+  handleOptionSelected,
+  notEditable,
+}) {
   const handleOptionClick = (selectedOption) => {
+    if (notEditable && activeModalItem?.item.selectedOption != null) {
+      return;
+    }
+
     handleOptionSelected(
       activeModalItem.categoryId,
       activeModalItem.itemId,
       selectedOption,
     );
-    onClose();
   };
 
   const getBtnStatus = (btnIndex) => {
-    if (
-      activeModalItem?.item.selectedOption != null &&
-      btnIndex + 1 == activeModalItem.item.selectedOption
-    ) {
-      return activeModalItem.item.selectedOption == activeModalItem.item.answer
-        ? "jeopardy-answer-btn-correct"
-        : "jeopardy-answer-btn-incorrect";
-    }
+    if (activeModalItem?.item.selectedOption != null)
+      if (btnIndex + 1 == activeModalItem.item.selectedOption) {
+        return activeModalItem.item.selectedOption ==
+          activeModalItem.item.answer
+          ? "jeopardy-answer-btn-correct"
+          : "jeopardy-answer-btn-incorrect";
+      } else if (btnIndex + 1 == activeModalItem.item.answer) {
+        return "jeopardy-answer-btn-outlined";
+      }
     return "";
   };
 
@@ -48,6 +58,9 @@ function Card({ activeModalItem, show, onClose, handleOptionSelected }) {
                 key={`jeopardy-btn-key-${index}`}
                 className={`jeopardy-answer-btn ${getBtnStatus(index)}`}
                 onClick={() => handleOptionClick(index + 1)}
+                disabled={
+                  notEditable && activeModalItem?.item.selectedOption != null
+                }
               >
                 {text}
               </button>
