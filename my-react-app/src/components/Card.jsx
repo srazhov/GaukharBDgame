@@ -56,6 +56,14 @@ function Card({
               />
             </div>
           )}
+          {activeModalItem?.item.imageLink && (
+            <div style={{ padding: "20px", margin: "0 auto" }}>
+              <img
+                style={{ maxHeight: "650px" }}
+                src={`/photo/${activeModalItem.item.imageLink}`}
+              />
+            </div>
+          )}
           <div className="jeopardy-answers">
             {activeModalItem?.item.options.map((text, index) => (
               <button
