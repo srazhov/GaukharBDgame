@@ -28,16 +28,16 @@ export function UpdateSelectedOption(
       ...prevOptions,
       { catId: categoryIndex, itemId: itemIndex, option: newOption },
     ];
-    });
+  });
 }
 
 export function CalculateEarnedScore(tableItems, selectedOptions) {
   let total = 0;
   selectedOptions.forEach((sel) => {
-      if (tableItems[sel.catId].items[sel.itemId].answer == sel.option) {
-        total += tableItems[sel.catId].items[sel.itemId].price;
-      }
-      });
+    if (tableItems[sel.catId].items[sel.itemId].answer == sel.option) {
+      total += tableItems[sel.catId].items[sel.itemId].price;
+    }
+  });
 
   return total;
 }
@@ -51,4 +51,18 @@ export function CalculateTotalScore(tableItems) {
   });
 
   return total;
+}
+
+export function SaveSelectedOptions(selectedOptions) {
+  localStorage.setItem("selected_options", JSON.stringify(selectedOptions));
+}
+
+export function LoadSelectedOptions() {
+  const savedString = localStorage.getItem("selected_options");
+  if (savedString) {
+    const savedSelectedOptions = JSON.parse(savedString);
+    return savedSelectedOptions;
+  }
+
+  return [];
 }

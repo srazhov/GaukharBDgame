@@ -8,11 +8,13 @@ import {
   UpdateSelectedOption,
   CalculateEarnedScore,
   CalculateTotalScore,
+  LoadSelectedOptions,
+  SaveSelectedOptions,
 } from "../helpers/GameDataManipulation";
 import VerticalProgressBar from "./VerticalProgressBar";
 
 export function GameManagementContainer() {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions] = useState(LoadSelectedOptions());
   const [activeModalItem, setActiveModalItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [tableItems] = useState(GetTableItems());
@@ -21,6 +23,7 @@ export function GameManagementContainer() {
 
   useEffect(() => {
     setEarnedScore(CalculateEarnedScore(tableItems, selectedOptions));
+    SaveSelectedOptions(selectedOptions);
   }, [selectedOptions]);
 
   const handleTileClick = (item, catIndex, itemIndex) => {
@@ -52,7 +55,7 @@ export function GameManagementContainer() {
         selectedOption={selectedOptions.find(
           (item) =>
             item.catId == activeModalItem?.categoryId &&
-            item.itemId == activeModalItem.itemId,
+            item.itemId == activeModalItem?.itemId,
         )}
         show={showModal}
         handleOptionSelected={handleOptionSelected}
