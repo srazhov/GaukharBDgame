@@ -12,16 +12,16 @@ import {
 import VerticalProgressBar from "./VerticalProgressBar";
 
 export function GameManagementContainer() {
-  const [tableItems, setTableItems] = useState(GetTableItems());
-  const [totalScore, _] = useState(CalculateTotalScore(tableItems));
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [activeModalItem, setActiveModalItem] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [tableItems] = useState(GetTableItems());
+  const [totalScore] = useState(CalculateTotalScore(tableItems));
   const [earnedScore, setEarnedScore] = useState(0);
 
   useEffect(() => {
-    setEarnedScore(CalculateEarnedScore(tableItems));
-  }, [tableItems]);
-
-  const [showModal, setShowModal] = useState(false);
-  const [activeModalItem, setActiveModalItem] = useState(null);
+    setEarnedScore(CalculateEarnedScore(tableItems, selectedOptions));
+  }, [selectedOptions]);
 
   const handleTileClick = (item, catIndex, itemIndex) => {
     setActiveModalItem({ item: item, categoryId: catIndex, itemId: itemIndex });
@@ -30,7 +30,7 @@ export function GameManagementContainer() {
 
   const handleOptionSelected = (categoryIndex, itemIndex, selectedOption) => {
     UpdateSelectedOption(
-      setTableItems,
+      setSelectedOptions,
       categoryIndex,
       itemIndex,
       selectedOption,
@@ -49,6 +49,11 @@ export function GameManagementContainer() {
     <>
       <Card
         activeModalItem={activeModalItem}
+        selectedOption={selectedOptions.find(
+          (item) =>
+            item.catId == activeModalItem?.categoryId &&
+            item.itemId == activeModalItem.itemId,
+        )}
         show={showModal}
         handleOptionSelected={handleOptionSelected}
         onClose={() => setShowModal(false)}
@@ -60,6 +65,7 @@ export function GameManagementContainer() {
             tableItems={tableItems}
             handleOptionSelected={handleOptionSelected}
             handleTileClick={handleTileClick}
+            selectedOptions={selectedOptions}
           ></GameTable>
         </div>
         <div className="sidebar-section">

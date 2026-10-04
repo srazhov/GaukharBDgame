@@ -10,8 +10,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 200,
@@ -21,8 +20,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 300,
@@ -32,8 +30,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 400,
@@ -43,8 +40,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 500,
@@ -54,8 +50,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       }
     ]
   },
@@ -70,8 +65,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 200,
@@ -81,8 +75,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 300,
@@ -92,8 +85,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 400,
@@ -103,8 +95,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 500,
@@ -114,8 +105,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       }
     ]
   },
@@ -130,8 +120,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 200,
@@ -141,8 +130,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 300,
@@ -152,8 +140,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 400,
@@ -163,8 +150,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 500,
@@ -174,8 +160,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       }
     ]
   },
@@ -191,7 +176,6 @@
           "b",
           "c"
         ],
-        "selectedOption": null,
         "videoLink": "1.mp4"
       },
       {
@@ -202,8 +186,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 300,
@@ -213,8 +196,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 400,
@@ -224,8 +206,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 500,
@@ -235,8 +216,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       }
     ]
   },
@@ -251,8 +231,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 200,
@@ -262,8 +241,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 300,
@@ -273,8 +251,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 400,
@@ -284,8 +261,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       },
       {
         "price": 500,
@@ -295,8 +271,7 @@
           "a",
           "b",
           "c"
-        ],
-        "selectedOption": null
+        ]
       }
     ]
   }

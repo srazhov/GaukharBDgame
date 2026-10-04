@@ -5,39 +5,39 @@ export function GetTableItems() {
 }
 
 export function UpdateSelectedOption(
-  setTableItems,
+  setSelectedOptions,
   categoryIndex,
   itemIndex,
-  selectedOption,
+  newOption,
 ) {
-  setTableItems((prevItems) =>
-    prevItems.map((category, cIndex) => {
-      if (cIndex !== categoryIndex) return category;
+  setSelectedOptions((prevOptions) => {
+    const existingIndex = prevOptions.findIndex(
+      (item) => item.catId === categoryIndex && item.itemId === itemIndex,
+    );
 
-      return {
-        ...category,
-        items: category.items.map((item, iIndex) => {
-          if (iIndex !== itemIndex) return item;
-
-          return {
-            ...item,
-            selectedOption: selectedOption,
-          };
-        }),
+    if (existingIndex !== -1) {
+      const newOptions = [...prevOptions];
+      newOptions[existingIndex] = {
+        ...newOptions[existingIndex],
+        option: newOption,
       };
-    }),
-  );
+      return newOptions;
+    }
+
+    return [
+      ...prevOptions,
+      { catId: categoryIndex, itemId: itemIndex, option: newOption },
+    ];
+    });
 }
 
-export function CalculateEarnedScore(tableItems) {
+export function CalculateEarnedScore(tableItems, selectedOptions) {
   let total = 0;
-  tableItems.forEach((cat) => {
-    cat.items.forEach((item) => {
-      if (item.selectedOption != null && item.selectedOption == item.answer) {
-        total += item.price;
+  selectedOptions.forEach((sel) => {
+      if (tableItems[sel.catId].items[sel.itemId].answer == sel.option) {
+        total += tableItems[sel.catId].items[sel.itemId].price;
       }
-    });
-  });
+      });
 
   return total;
 }

@@ -3,28 +3,28 @@ import VideoPlayer from "./VideoPlayer";
 
 function Card({
   activeModalItem,
+  selectedOption,
   show,
   onClose,
   handleOptionSelected,
   notEditable,
 }) {
-  const handleOptionClick = (selectedOption) => {
-    if (notEditable && activeModalItem?.item.selectedOption != null) {
+  const handleOptionClick = (newSelectedOption) => {
+    if (notEditable && selectedOption) {
       return;
     }
 
     handleOptionSelected(
       activeModalItem.categoryId,
       activeModalItem.itemId,
-      selectedOption,
+      newSelectedOption,
     );
   };
 
   const getBtnStatus = (btnIndex) => {
-    if (activeModalItem?.item.selectedOption != null)
-      if (btnIndex + 1 == activeModalItem.item.selectedOption) {
-        return activeModalItem.item.selectedOption ==
-          activeModalItem.item.answer
+    if (selectedOption)
+      if (btnIndex + 1 == selectedOption.option) {
+        return selectedOption.option == activeModalItem.item.answer
           ? "jeopardy-answer-btn-correct"
           : "jeopardy-answer-btn-incorrect";
       } else if (btnIndex + 1 == activeModalItem.item.answer) {
@@ -58,9 +58,7 @@ function Card({
                 key={`jeopardy-btn-key-${index}`}
                 className={`jeopardy-answer-btn ${getBtnStatus(index)}`}
                 onClick={() => handleOptionClick(index + 1)}
-                disabled={
-                  notEditable && activeModalItem?.item.selectedOption != null
-                }
+                disabled={notEditable && selectedOption}
               >
                 {text}
               </button>

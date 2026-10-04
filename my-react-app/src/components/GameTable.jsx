@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import TableItem from "./TableItem";
 
-function GameTable({ tableItems, handleTileClick }) {
+function GameTable({ tableItems, selectedOptions, handleTileClick }) {
   return (
     <>
       <Container className="game-board justify-content-center align-items-center px-4">
@@ -13,7 +13,9 @@ function GameTable({ tableItems, handleTileClick }) {
               key={`game-table-${catItem}-${i}`}
               className={`card-column-${i}`}
             >
-              <div className={`category-header card-column-${i}-color`}>{catItem.categoryName}</div>
+              <div className={`category-header card-column-${i}-color`}>
+                {catItem.categoryName}
+              </div>
             </Col>
           ))}
         </Row>
@@ -40,6 +42,9 @@ function GameTable({ tableItems, handleTileClick }) {
             index={j}
             overlayOpacity={overlayOpacity}
             onClick={(item) => handleTileClick(item, j, i)}
+            selectedItem={selectedOptions.find(
+              (item) => item.catId == j && item.itemId == i,
+            )}
           ></TableItem>,
         );
       }

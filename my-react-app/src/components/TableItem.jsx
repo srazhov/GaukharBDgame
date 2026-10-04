@@ -1,10 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
-function TableItem({ item, index, overlayOpacity, onClick }) {
+function TableItem({ selectedItem, item, index, overlayOpacity, onClick }) {
   const getItemStatusStyle = () => {
-    if (item.selectedOption != null) {
-      return item.selectedOption == item.answer
+    if (selectedItem) {
+      return selectedItem.option == item.answer
         ? "option-chosen-correct"
         : "option-choosable option-chosen-incorrect";
     }
