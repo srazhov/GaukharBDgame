@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import Countdown from "./Countdown";
 
-const VideoPlayer = ({ videoPath, showCountdown }) => {
+const VideoPlayer = ({ videoPath, showCountdown, onVideoReady }) => {
   const [videoReady, setVideoReady] = useState(false);
   const fullPath = `/video/${videoPath}`;
   const videoRef = useRef(null);
@@ -11,6 +11,10 @@ const VideoPlayer = ({ videoPath, showCountdown }) => {
       videoRef.current.play().catch((error) => {
         console.log("Autoplay was prevented by the browser:", error);
       });
+    }
+
+    if(onVideoReady) {
+      onVideoReady();
     }
 
     setVideoReady(true);

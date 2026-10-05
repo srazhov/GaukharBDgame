@@ -86,3 +86,31 @@
     transform: scale(1.03);
     filter: brightness(1.05);
 }
+
+.pulsating-colorful-text {
+  background: linear-gradient(90deg, #ff007f, #ff8c00, #ffea00, #00fa9a, #00bfff, #8a2be2);
+  background-size: 200% auto;
+  
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  animation: 
+    pulse-scale 1.2s ease-in-out infinite, 
+    color-shift 3s linear infinite;
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes color-shift {
+  to {
+    background-position: 200% center;
+  }
+}

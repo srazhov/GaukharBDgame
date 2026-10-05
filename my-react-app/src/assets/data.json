@@ -170,14 +170,17 @@
     "items": [
       {
         "price": 100,
-        "question": "test 100",
+        "question": "С чем просыпается Гаухар рядом?",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
+          "Правильно",
+          "Неправильно"
         ],
-        "videoLink": "1.mp4"
+        "imageLink": "phone1.jpg",
+        "secondPart": {
+          "text": "Телефон",
+          "imageLink": "phone2.png"
+        }
       },
       {
         "price": 200,
@@ -197,17 +200,23 @@
           "a",
           "b",
           "c"
-        ]
+        ],
+        "imageLink": "chiara.jpg"
       },
       {
         "price": 400,
         "question": "test 400",
-        "answer": 1,
+        "answer": 2,
         "options": [
           "a",
           "b",
           "c"
-        ]
+        ],
+        "videoLink": "1.mp4",
+        "secondPart": {
+          "text": "Телефон",
+          "videoLink": "2.mp4"
+        }
       },
       {
         "price": 500,

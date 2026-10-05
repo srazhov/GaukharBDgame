@@ -1,5 +1,6 @@
 import Modal from "react-bootstrap/Modal";
-import VideoPlayer from "./VideoPlayer";
+import CardMediaContainer from "./CardMediaContainer";
+import { useEffect, useState } from "react";
 
 function Card({
   activeModalItem,
@@ -9,6 +10,24 @@ function Card({
   handleOptionSelected,
   notEditable,
 }) {
+  const [firstPartReady, setFirstPartReady] = useState(false);
+  const [secondPartReady, setSecondPartReady] = useState(false);
+
+  useEffect(() => {
+    if (!activeModalItem?.item.videoLink) {
+      setFirstPartReady(true);
+    } else {
+      setFirstPartReady(false);
+    }
+
+    if (activeModalItem?.item.secondPart?.videoLink) {
+      setSecondPartReady(false);
+    }
+    else {
+      setSecondPartReady(true);
+    }
+  }, [activeModalItem]);
+
   const handleOptionClick = (newSelectedOption) => {
     if (notEditable && selectedOption) {
       return;
@@ -46,36 +65,47 @@ function Card({
           <h2 className="jeopardy-question">
             {activeModalItem?.item.question}
           </h2>
-          {activeModalItem?.item.videoLink && (
-            <div
-              style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}
-            >
-              <VideoPlayer
-                showCountdown={!selectedOption}
-                videoPath={activeModalItem.item.videoLink}
+          {(!activeModalItem?.item.secondPart || !selectedOption) && (
+            <>
+              <CardMediaContainer
+                showVideoCountdown={!selectedOption}
+                activeModalItem={activeModalItem}
+                videoLink={activeModalItem?.item.videoLink}
+                imageLink={activeModalItem?.item.imageLink}
+                onVideoReady={() => setFirstPartReady(true)}
               />
+              {firstPartReady && (
+                <div className="jeopardy-answers">
+                  {activeModalItem?.item.options.map((text, index) => (
+                    <button
+                      key={`jeopardy-btn-key-${index}`}
+                      className={`jeopardy-answer-btn ${getBtnStatus(index)}`}
+                      onClick={() => handleOptionClick(index + 1)}
+                      disabled={notEditable && selectedOption}
+                    >
+                      {text}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+          {selectedOption && activeModalItem?.item.secondPart && (
+            <div className="jeopardy-second-part d-flex flex-column justify-content-center">
+              <CardMediaContainer
+                showVideoCountdown={true}
+                activeModalItem={activeModalItem}
+                videoLink={activeModalItem.item.secondPart.videoLink}
+                imageLink={activeModalItem.item.secondPart.imageLink}
+                onVideoReady={() => setSecondPartReady(true)}
+              />
+              {activeModalItem.item.secondPart.text && secondPartReady && (
+                <div className="text-center display-2 fw-bold pulsating-colorful-text p-3">
+                  {activeModalItem.item.secondPart.text}
+                </div>
+              )}
             </div>
           )}
-          {activeModalItem?.item.imageLink && (
-            <div style={{ padding: "20px", margin: "0 auto" }}>
-              <img
-                style={{ maxHeight: "650px" }}
-                src={`/photo/${activeModalItem.item.imageLink}`}
-              />
-            </div>
-          )}
-          <div className="jeopardy-answers">
-            {activeModalItem?.item.options.map((text, index) => (
-              <button
-                key={`jeopardy-btn-key-${index}`}
-                className={`jeopardy-answer-btn ${getBtnStatus(index)}`}
-                onClick={() => handleOptionClick(index + 1)}
-                disabled={notEditable && selectedOption}
-              >
-                {text}
-              </button>
-            ))}
-          </div>
         </Modal.Body>
       </Modal>
     </>
