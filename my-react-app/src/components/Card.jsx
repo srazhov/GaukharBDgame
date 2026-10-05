@@ -94,7 +94,6 @@ function Card({
             <div className="jeopardy-second-part d-flex flex-column justify-content-center">
               <CardMediaContainer
                 showVideoCountdown={true}
-                activeModalItem={activeModalItem}
                 videoLink={activeModalItem.item.secondPart.videoLink}
                 imageLink={activeModalItem.item.secondPart.imageLink}
                 onVideoReady={() => setSecondPartReady(true)}

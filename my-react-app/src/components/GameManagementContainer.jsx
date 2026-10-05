@@ -20,6 +20,7 @@ export function GameManagementContainer() {
   const [tableItems] = useState(GetTableItems());
   const [totalScore] = useState(CalculateTotalScore(tableItems));
   const [earnedScore, setEarnedScore] = useState(0);
+  const [isRewardScreen, setIsRewardScreen] = useState(false);
 
   useEffect(() => {
     setEarnedScore(CalculateEarnedScore(tableItems, selectedOptions));
@@ -32,20 +33,37 @@ export function GameManagementContainer() {
   };
 
   const handleOptionSelected = (categoryIndex, itemIndex, selectedOption) => {
-    UpdateSelectedOption(
-      setSelectedOptions,
-      categoryIndex,
-      itemIndex,
-      selectedOption,
-    );
+    if (isRewardScreen) {
+      setIsRewardScreen(false);
+      setShowModal(false);
+    } else {
+      UpdateSelectedOption(
+        setSelectedOptions,
+        categoryIndex,
+        itemIndex,
+        selectedOption,
+      );
 
-    setActiveModalItem((prev) => ({
-      ...prev,
-      item: {
-        ...prev.item,
-        selectedOption: selectedOption,
-      },
-    }));
+      setActiveModalItem((prev) => ({
+        ...prev,
+        item: {
+          ...prev.item,
+          selectedOption: selectedOption,
+        },
+      }));
+    }
+  };
+
+  const handleOnRewardClick = () => {
+    const rewardScreenItem = {
+      question: "Congratulations!",
+      answer: 1,
+      options: ["Забрать подарок"],
+      imageLink: "phone1.jpg",
+    };
+
+    setIsRewardScreen(true);
+    handleTileClick(rewardScreenItem, 2, 999);
   };
 
   return (
@@ -75,6 +93,7 @@ export function GameManagementContainer() {
           <VerticalProgressBar
             currentScore={earnedScore}
             maxScore={totalScore}
+            onRewardClick={handleOnRewardClick}
           />
         </div>
       </div>

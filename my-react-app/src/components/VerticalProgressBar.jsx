@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "../styles/VerticalProgressBar.css";
 
 const GiftIcon = () => (
@@ -12,24 +13,63 @@ const HeartIcon = () => (
   </svg>
 );
 
-export default function VerticalProgressBar({ currentScore, maxScore }) {
+export default function VerticalProgressBar({
+  currentScore,
+  maxScore,
+  onRewardClick,
+}) {
+  const [milestones, setMilestones] = useState([
+    { percent: 10, label: "Almaty", achieved: false, claimed: false },
+    { percent: 25, label: "Rome", achieved: false, claimed: false },
+    { percent: 50, label: "Padova", achieved: false, claimed: false },
+    { percent: 75, label: "Saint-Petersburg", achieved: false, claimed: false },
+    { percent: 100, label: "Uralsk", achieved: false, claimed: false },
+  ]);
+
+  useEffect(() => {
+    const currentProgress = getProgress();
+
+    setMilestones((prevMilestones) =>
+      prevMilestones.map((milestone) => {
+        const isNowAchieved = currentProgress >= milestone.percent;
+
+        if (milestone.achieved !== isNowAchieved) {
+          return { ...milestone, achieved: isNowAchieved };
+        }
+
+        return milestone;
+      }),
+    );
+  }, [currentScore]);
+
   const getProgress = () => {
     return Math.round((currentScore / maxScore) * 100);
   };
 
-  const milestones = [
-    { percent: 25, label: "Milestone 1" },
-    { percent: 50, label: "Milestone 2" },
-    { percent: 75, label: "Milestone 3" },
-    { percent: 100, label: "Goal!" },
-  ];
+  const handleClaimReward = (ms) => {
+    if (!ms.achieved || ms.claimed) {
+      return;
+    }
+
+    if (onRewardClick) {
+      onRewardClick();
+    }
+    setMilestones((prevMilestones) =>
+      prevMilestones.map((milestone) => {
+        if (milestone.percent === ms.percent) {
+          return { ...milestone, claimed: true };
+        }
+
+        return milestone;
+      }),
+    );
+  };
 
   return (
     <div className="progress-container">
       <div className="progress-header">Current Progress: {getProgress()}%</div>
 
       <div className="progress-track">
-        {/* The animated bar's height must remain inline because it's dynamic state */}
         <div
           className="progress-fill"
           style={{ height: `${getProgress()}%` }}
@@ -41,12 +81,19 @@ export default function VerticalProgressBar({ currentScore, maxScore }) {
             className="milestone"
             style={{ bottom: `${milestone.percent}%` }}
           >
-            <div className="milestone-icon">
+            <div
+              onClick={() => handleClaimReward(milestone)}
+              className={`milestone-icon ${milestone.achieved && !milestone.claimed ? "milestone-clickable" : ""}`}
+            >
               {milestone.percent === 100 ? <HeartIcon /> : <GiftIcon />}
             </div>
 
             <div className="milestone-text">
-              <p className="milestone-title">{milestone.label}</p>
+              <p
+                className={`milestone-title ${milestone.achieved ? "pulsating-colorful-text" : ""}`}
+              >
+                {milestone.label}
+              </p>
               <p className="milestone-subtitle">{milestone.percent}%</p>
             </div>
           </div>

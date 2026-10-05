@@ -91,7 +91,7 @@
   background: linear-gradient(90deg, #ff007f, #ff8c00, #ffea00, #00fa9a, #00bfff, #8a2be2);
   background-size: 200% auto;
   
-  color: transparent;
+  color: transparent!important;
   -webkit-background-clip: text;
   background-clip: text;
   
