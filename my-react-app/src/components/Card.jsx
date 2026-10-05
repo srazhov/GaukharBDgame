@@ -81,7 +81,7 @@ function Card({
                       key={`jeopardy-btn-key-${index}`}
                       className={`jeopardy-answer-btn ${getBtnStatus(index)}`}
                       onClick={() => handleOptionClick(index + 1)}
-                      disabled={notEditable && selectedOption}
+                      disabled={!!(notEditable && selectedOption)}
                     >
                       {text}
                     </button>

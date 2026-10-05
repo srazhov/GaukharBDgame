@@ -11,23 +11,54 @@ import {
   LoadSelectedOptions,
   SaveSelectedOptions,
   GetRewardsData,
+  GetPunishmentsData,
+  AreThereAvailableOptions,
 } from "../helpers/GameDataManipulation";
 import VerticalProgressBar from "./VerticalProgressBar";
 
 export function GameManagementContainer() {
-  const [selectedOptions, setSelectedOptions] = useState(LoadSelectedOptions());
+  const [selectedOptions, setSelectedOptions] = useState(
+    LoadSelectedOptions(false),
+  );
+  const [selectedPunishments, setSelectedPunishments] = useState(
+    LoadSelectedOptions(true),
+  );
   const [activeModalItem, setActiveModalItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
   const [tableItems] = useState(() => GetTableItems());
   const [rewardsData] = useState(() => GetRewardsData());
-  const [totalScore] = useState(CalculateTotalScore(tableItems));
+  const [punishmentsData] = useState(() => GetPunishmentsData());
+
+  const totalScore = CalculateTotalScore(tableItems);
   const [earnedScore, setEarnedScore] = useState(0);
+
   const [isRewardScreen, setIsRewardScreen] = useState(false);
+  const [noAvailableOptions, setNoAvailableOptions] = useState(
+    () => !AreThereAvailableOptions(tableItems, selectedOptions),
+  );
 
   useEffect(() => {
     setEarnedScore(CalculateEarnedScore(tableItems, selectedOptions));
-    SaveSelectedOptions(selectedOptions);
+
+    SaveSelectedOptions(selectedOptions, false);
+
+    setNoAvailableOptions(
+      !AreThereAvailableOptions(tableItems, selectedOptions),
+    );
   }, [selectedOptions]);
+
+  useEffect(() => {
+    setEarnedScore(
+      CalculateEarnedScore(
+        tableItems,
+        selectedOptions,
+        punishmentsData,
+        selectedPunishments,
+      ),
+    );
+    SaveSelectedOptions(selectedPunishments, true);
+  }, [selectedPunishments]);
 
   const handleTileClick = (item, catIndex, itemIndex) => {
     setActiveModalItem({ item: item, categoryId: catIndex, itemId: itemIndex });
@@ -40,7 +71,7 @@ export function GameManagementContainer() {
       setShowModal(false);
     } else {
       UpdateSelectedOption(
-        setSelectedOptions,
+        noAvailableOptions ? setSelectedPunishments : setSelectedOptions,
         categoryIndex,
         itemIndex,
         selectedOption,
@@ -61,27 +92,35 @@ export function GameManagementContainer() {
     handleTileClick(rewardsData[index], 2, 999);
   };
 
+  const getSelectedCardOption = () => {
+    const selectFrom = noAvailableOptions
+      ? selectedPunishments
+      : selectedOptions;
+    return selectFrom.find(
+      (item) =>
+        item.catId == activeModalItem?.categoryId &&
+        item.itemId == activeModalItem?.itemId,
+    );
+  };
+
   return (
     <>
       <Card
         activeModalItem={activeModalItem}
-        selectedOption={selectedOptions.find(
-          (item) =>
-            item.catId == activeModalItem?.categoryId &&
-            item.itemId == activeModalItem?.itemId,
-        )}
+        selectedOption={getSelectedCardOption()}
         show={showModal}
         handleOptionSelected={handleOptionSelected}
         onClose={() => setShowModal(false)}
-        notEditable={true}
+        notEditable={!noAvailableOptions}
       ></Card>
       <div className="game-layout">
         <div className="grid-section">
           <GameTable
-            tableItems={tableItems}
-            handleOptionSelected={handleOptionSelected}
+            tableItems={noAvailableOptions ? punishmentsData : tableItems}
             handleTileClick={handleTileClick}
-            selectedOptions={selectedOptions}
+            selectedOptions={
+              noAvailableOptions ? selectedPunishments : selectedOptions
+            }
           ></GameTable>
         </div>
         <div className="sidebar-section">
