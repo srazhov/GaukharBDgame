@@ -1,7 +1,12 @@
 import tableData from "../assets/data.json";
+import rewardsData from '../assets/rewardsData.json';
 
 export function GetTableItems() {
   return tableData;
+}
+
+export function GetRewardsData() {
+  return rewardsData;
 }
 
 export function UpdateSelectedOption(

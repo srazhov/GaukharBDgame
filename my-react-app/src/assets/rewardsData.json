@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Almaty",
+        "percent": 10,
+        "question": "Congratulations!",
+        "answer": 1,
+        "options": [
+            "Уже получила!"
+        ],
+        "imageLink": "phone1.jpg"
+    },
+    {
+        "title": "Rome",
+        "percent": 25,
+        "question": "Congratulations!",
+        "answer": 1,
+        "options": [
+            "Забрать подарок"
+        ],
+        "imageLink": "phone1.jpg"
+    },
+    {
+        "title": "Padova",
+        "percent": 50,
+        "question": "Congratulations!",
+        "answer": 1,
+        "options": [
+            "Забрать подарок"
+        ],
+        "imageLink": "phone1.jpg"
+    },
+    {
+        "title": "Saint-Petersburg",
+        "percent": 75,
+        "question": "Congratulations!",
+        "answer": 1,
+        "options": [
+            "Забрать подарок"
+        ],
+        "imageLink": "phone1.jpg"
+    },
+    {
+        "title": "Uralsk",
+        "percent": 100,
+        "question": "Congratulations!",
+        "answer": 1,
+        "options": [
+            "Забрать подарок"
+        ],
+        "imageLink": "phone1.jpg"
+    }
+]

@@ -14,22 +14,24 @@ const HeartIcon = () => (
 );
 
 export default function VerticalProgressBar({
+  milestones,
   currentScore,
   maxScore,
   onRewardClick,
 }) {
-  const [milestones, setMilestones] = useState([
-    { percent: 10, label: "Almaty", achieved: false, claimed: false },
-    { percent: 25, label: "Rome", achieved: false, claimed: false },
-    { percent: 50, label: "Padova", achieved: false, claimed: false },
-    { percent: 75, label: "Saint-Petersburg", achieved: false, claimed: false },
-    { percent: 100, label: "Uralsk", achieved: false, claimed: false },
-  ]);
+  const [milestoneStatuses, setMilestoneStatuses] = useState(() =>
+    milestones.map((milestone) => ({
+      percent: milestone.percent,
+      label: milestone.label,
+      achieved: false,
+      claimed: false,
+    })),
+  );
 
   useEffect(() => {
     const currentProgress = getProgress();
 
-    setMilestones((prevMilestones) =>
+    setMilestoneStatuses((prevMilestones) =>
       prevMilestones.map((milestone) => {
         const isNowAchieved = currentProgress >= milestone.percent;
 
@@ -46,15 +48,15 @@ export default function VerticalProgressBar({
     return Math.round((currentScore / maxScore) * 100);
   };
 
-  const handleClaimReward = (ms) => {
+  const handleClaimReward = (ms, index) => {
     if (!ms.achieved || ms.claimed) {
       return;
     }
 
     if (onRewardClick) {
-      onRewardClick();
+      onRewardClick(index);
     }
-    setMilestones((prevMilestones) =>
+    setMilestoneStatuses((prevMilestones) =>
       prevMilestones.map((milestone) => {
         if (milestone.percent === ms.percent) {
           return { ...milestone, claimed: true };
@@ -75,14 +77,14 @@ export default function VerticalProgressBar({
           style={{ height: `${getProgress()}%` }}
         />
 
-        {milestones.map((milestone) => (
+        {milestoneStatuses.map((milestone, index) => (
           <div
             key={milestone.percent}
             className="milestone"
             style={{ bottom: `${milestone.percent}%` }}
           >
             <div
-              onClick={() => handleClaimReward(milestone)}
+              onClick={() => handleClaimReward(milestone, index)}
               className={`milestone-icon ${milestone.achieved && !milestone.claimed ? "milestone-clickable" : ""}`}
             >
               {milestone.percent === 100 ? <HeartIcon /> : <GiftIcon />}

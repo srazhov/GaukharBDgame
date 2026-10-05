@@ -10,6 +10,7 @@ import {
   CalculateTotalScore,
   LoadSelectedOptions,
   SaveSelectedOptions,
+  GetRewardsData,
 } from "../helpers/GameDataManipulation";
 import VerticalProgressBar from "./VerticalProgressBar";
 
@@ -17,7 +18,8 @@ export function GameManagementContainer() {
   const [selectedOptions, setSelectedOptions] = useState(LoadSelectedOptions());
   const [activeModalItem, setActiveModalItem] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [tableItems] = useState(GetTableItems());
+  const [tableItems] = useState(() => GetTableItems());
+  const [rewardsData] = useState(() => GetRewardsData());
   const [totalScore] = useState(CalculateTotalScore(tableItems));
   const [earnedScore, setEarnedScore] = useState(0);
   const [isRewardScreen, setIsRewardScreen] = useState(false);
@@ -54,16 +56,9 @@ export function GameManagementContainer() {
     }
   };
 
-  const handleOnRewardClick = () => {
-    const rewardScreenItem = {
-      question: "Congratulations!",
-      answer: 1,
-      options: ["Забрать подарок"],
-      imageLink: "phone1.jpg",
-    };
-
+  const handleOnRewardClick = (index) => {
     setIsRewardScreen(true);
-    handleTileClick(rewardScreenItem, 2, 999);
+    handleTileClick(rewardsData[index], 2, 999);
   };
 
   return (
@@ -91,6 +86,7 @@ export function GameManagementContainer() {
         </div>
         <div className="sidebar-section">
           <VerticalProgressBar
+            milestones={rewardsData}
             currentScore={earnedScore}
             maxScore={totalScore}
             onRewardClick={handleOnRewardClick}
