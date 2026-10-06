@@ -1,7 +1,7 @@
 [
     {
         "title": "Almaty",
-        "percent": 10,
+        "percent": 15,
         "question": "Congratulations!",
         "answer": 1,
         "options": [
@@ -11,7 +11,7 @@
     },
     {
         "title": "Rome",
-        "percent": 25,
+        "percent": 30,
         "question": "Congratulations!",
         "answer": 1,
         "options": [
@@ -21,7 +21,21 @@
     },
     {
         "title": "Padova",
-        "percent": 50,
+        "percent": 45,
+        "question": "Keep going!",
+        "answer": 1,
+        "options": [
+            "Забрать подарок"
+        ],
+        "imageLink": "phone1.jpg",
+        "secondPart": {
+            "text": "Телефон",
+            "imageLink": "phone2.png"
+        }
+    },
+    {
+        "title": "Saint-Petersburg",
+        "percent": 70,
         "question": "Congratulations!",
         "answer": 1,
         "options": [
@@ -30,14 +44,17 @@
         "imageLink": "phone1.jpg"
     },
     {
-        "title": "Saint-Petersburg",
-        "percent": 75,
-        "question": "Congratulations!",
+        "title": "Shymkent",
+        "percent": 85,
+        "question": "You are almost there!",
         "answer": 1,
         "options": [
             "Забрать подарок"
         ],
-        "imageLink": "phone1.jpg"
+        "imageLink": "Chiara-Shakhzoda-Gaukhar-2.jpeg",
+        "secondPart": {
+            "imageLink": "Chiara-Shakhzoda-Gaukhar-3.jpeg"
+        }
     },
     {
         "title": "Uralsk",

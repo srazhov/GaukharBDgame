@@ -58,6 +58,7 @@ export function GameManagementContainer() {
   const handleTileClick = (item, catIndex, itemIndex) => {
     setActiveModalItem({ item: item, categoryId: catIndex, itemId: itemIndex });
     setShowModal(true);
+    setRewardOptionSelected(false);
   };
 
   const handleOptionSelected = (categoryIndex, itemIndex, selectedOption) => {
@@ -70,7 +71,6 @@ export function GameManagementContainer() {
         setRewardOptionSelected(false);
       }
     } else {
-      setRewardOptionSelected(false);
       UpdateSelectedOption(
         noAvailableOptions ? setSelectedPunishments : setSelectedOptions,
         categoryIndex,

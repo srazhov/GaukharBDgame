@@ -95,16 +95,21 @@ function Card({
           {(selectedOption && activeModalItem?.item.secondPart) ||
             (rewardOptionSelected && (
               <div className="jeopardy-second-part d-flex flex-column justify-content-center">
-                <CardMediaContainer
-                  showVideoCountdown={true}
-                  videoLink={activeModalItem.item.secondPart.videoLink}
-                  imageLink={activeModalItem.item.secondPart.imageLink}
-                  onVideoReady={() => setSecondPartReady(true)}
-                />
-                {activeModalItem.item.secondPart.text && secondPartReady && (
-                  <div className="text-center display-2 fw-bold pulsating-colorful-text p-3">
-                    {activeModalItem.item.secondPart.text}
-                  </div>
+                {activeModalItem?.item.secondPart && (
+                  <>
+                    <CardMediaContainer
+                      showVideoCountdown={true}
+                      videoLink={activeModalItem.item.secondPart.videoLink}
+                      imageLink={activeModalItem.item.secondPart.imageLink}
+                      onVideoReady={() => setSecondPartReady(true)}
+                    />
+                    {activeModalItem.item.secondPart.text &&
+                      secondPartReady && (
+                        <div className="text-center display-2 fw-bold pulsating-colorful-text p-3">
+                          {activeModalItem.item.secondPart.text}
+                        </div>
+                      )}
+                  </>
                 )}
               </div>
             ))}
