@@ -22,7 +22,7 @@ export default function VerticalProgressBar({
   const [milestoneStatuses, setMilestoneStatuses] = useState(() =>
     milestones.map((milestone) => ({
       percent: milestone.percent,
-      label: milestone.label,
+      label: milestone.title,
       achieved: false,
       claimed: false,
     })),
