@@ -1,6 +1,11 @@
 import VideoPlayer from "./VideoPlayer";
 
-function CardMediaContainer({videoLink, imageLink, showVideoCountdown, onVideoReady}) {
+function CardMediaContainer({
+  videoLink,
+  imageLink,
+  showVideoCountdown,
+  onVideoReady,
+}) {
   return (
     <>
       {videoLink && (
@@ -15,7 +20,7 @@ function CardMediaContainer({videoLink, imageLink, showVideoCountdown, onVideoRe
       {imageLink && (
         <div style={{ padding: "20px", margin: "0 auto" }}>
           <img
-            style={{ maxHeight: "650px" }}
+            style={{ maxHeight: "650px", maxWidth: "800px" }}
             src={`/photo/${imageLink}`}
           />
         </div>

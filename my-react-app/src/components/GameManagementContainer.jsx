@@ -34,18 +34,13 @@ export function GameManagementContainer() {
   const [earnedScore, setEarnedScore] = useState(0);
 
   const [isRewardScreen, setIsRewardScreen] = useState(false);
-  const [noAvailableOptions, setNoAvailableOptions] = useState(
-    () => !AreThereAvailableOptions(tableItems, selectedOptions),
-  );
+  const [rewardOptionSelected, setRewardOptionSelected] = useState(false);
+  const [noAvailableOptions, setNoAvailableOptions] = useState(false);
 
   useEffect(() => {
     setEarnedScore(CalculateEarnedScore(tableItems, selectedOptions));
 
     SaveSelectedOptions(selectedOptions, false);
-
-    setNoAvailableOptions(
-      !AreThereAvailableOptions(tableItems, selectedOptions),
-    );
   }, [selectedOptions]);
 
   useEffect(() => {
@@ -67,9 +62,15 @@ export function GameManagementContainer() {
 
   const handleOptionSelected = (categoryIndex, itemIndex, selectedOption) => {
     if (isRewardScreen) {
-      setIsRewardScreen(false);
-      setShowModal(false);
+      if (rewardsData[itemIndex - 999]?.secondPart && !rewardOptionSelected) {
+        setRewardOptionSelected(true);
+      } else {
+        setIsRewardScreen(false);
+        setShowModal(false);
+        setRewardOptionSelected(false);
+      }
     } else {
+      setRewardOptionSelected(false);
       UpdateSelectedOption(
         noAvailableOptions ? setSelectedPunishments : setSelectedOptions,
         categoryIndex,
@@ -89,7 +90,7 @@ export function GameManagementContainer() {
 
   const handleOnRewardClick = (index) => {
     setIsRewardScreen(true);
-    handleTileClick(rewardsData[index], 2, 999);
+    handleTileClick(rewardsData[index], 2, 999 + index);
   };
 
   const getSelectedCardOption = () => {
@@ -107,7 +108,9 @@ export function GameManagementContainer() {
     <>
       <Card
         activeModalItem={activeModalItem}
+        rewardOptionSelected={rewardOptionSelected}
         selectedOption={getSelectedCardOption()}
+        isRewardScreen={isRewardScreen}
         show={showModal}
         handleOptionSelected={handleOptionSelected}
         onClose={() => setShowModal(false)}
@@ -122,6 +125,18 @@ export function GameManagementContainer() {
               noAvailableOptions ? selectedPunishments : selectedOptions
             }
           ></GameTable>
+          {!AreThereAvailableOptions(tableItems, selectedOptions) &&
+            !noAvailableOptions && (
+              <div className="no-available-options text-center mt-3">
+                <button
+                  type="button"
+                  className="btn btn-danger p-3 w-100"
+                  onClick={() => setNoAvailableOptions(true)}
+                >
+                  Go to the punishments section
+                </button>
+              </div>
+            )}
         </div>
         <div className="sidebar-section">
           <VerticalProgressBar
