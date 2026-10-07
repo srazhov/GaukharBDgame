@@ -268,13 +268,14 @@
         "price": 400,
         "question": "Кто плачет на этой встрече?",
         "answer": 1,
-        "imageLink": "test.png",
+        "imageLink": "B11_1.jpg",
         "options": [
           "Правильно",
           "Неправильно"
         ],
         "secondPart": {
-          "text": "Винчензо"
+          "text": "Винчензо",
+          "imageLink": "B11_2.jpg"
         }
       },
       {
