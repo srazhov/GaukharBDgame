@@ -19,7 +19,7 @@ function CardMediaContainer({
         </div>
       )}
       {(imageLink || imageLink2) && (
-        <div className="image-links-container d-flex">
+        <div className="image-links-container text-center">
           {imageLink && (
             <div style={{ padding: "20px", margin: "0 auto" }}>
               <img

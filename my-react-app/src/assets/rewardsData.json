@@ -46,7 +46,12 @@
         "options": [
             "Забрать подарок"
         ],
-        "imageLink": "phone1.jpg"
+        "imageLink": "reward_4_1_1.jpeg",
+        "imageLink2": "reward_4_1_2.jpeg",
+        "secondPart": {
+            "imageLink": "reward_4_2_1.jpeg",
+            "imageLink2": "reward_4_2_2.jpeg"
+        }
     },
     {
         "title": "Shymkent",
@@ -56,9 +61,11 @@
         "options": [
             "Забрать подарок"
         ],
-        "imageLink": "reward-2.jpeg",
+        "imageLink": "reward_5_1_1.jpeg",
+        "imageLink2": "reward_5_1_2.jpeg",
         "secondPart": {
-            "imageLink": "reward-3.jpeg"
+            "imageLink": "reward_5_2_1.jpeg",
+            "imageLink2": "reward_5_2_2.jpeg"
         }
     },
     {
