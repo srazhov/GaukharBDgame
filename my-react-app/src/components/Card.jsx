@@ -74,6 +74,7 @@ function Card({
                   activeModalItem={activeModalItem}
                   videoLink={activeModalItem?.item.videoLink}
                   imageLink={activeModalItem?.item.imageLink}
+                  imageLink2={activeModalItem?.item.imageLink2}
                   onVideoReady={() => setFirstPartReady(true)}
                 />
                 {firstPartReady && (
@@ -101,6 +102,7 @@ function Card({
                     showVideoCountdown={true}
                     videoLink={activeModalItem.item.secondPart.videoLink}
                     imageLink={activeModalItem.item.secondPart.imageLink}
+                    imageLink2={activeModalItem.item.secondPart.imageLink2}
                     onVideoReady={() => setSecondPartReady(true)}
                   />
                   {activeModalItem.item.secondPart.text && secondPartReady && (

@@ -2,12 +2,17 @@
     {
         "title": "Almaty",
         "percent": 15,
-        "question": "Congratulations!",
+        "question": "Это только начало, но держи подарок!",
         "answer": 1,
         "options": [
-            "Уже получила!"
+            "DJI??"
         ],
-        "imageLink": "phone1.jpg"
+        "imageLink": "reward_1_1.jpeg",
+        "imageLink2": "reward_1_1_second.jpg",
+        "secondPart": {
+            "text": "А ты уже получила подарок свой))",
+            "videoLink": "reward_1_2.mp4"
+        }
     },
     {
         "title": "Rome",
