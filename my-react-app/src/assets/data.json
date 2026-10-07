@@ -1,6 +1,6 @@
 [
   {
-    "categoryName": "FACTS",
+    "categoryName": "Все обо всем",
     "items": [
       {
         "price": 100,
@@ -9,7 +9,10 @@
         "options": [
           "Правильно",
           "Неправильно"
-        ]
+        ],
+        "secondPart": {
+          "text": "Касандр и Лали"
+        }
       },
       {
         "price": 200,
@@ -18,7 +21,10 @@
         "options": [
           "Правильно",
           "Неправильно"
-        ]
+        ],
+        "secondPart": {
+          "text": "Табак Old Holborn"
+        }
       },
       {
         "price": 300,
@@ -48,6 +54,88 @@
           "Луна",
           "Плутон"
         ]
+      },
+      {
+        "price": 149,
+        "question": "Любимый цвет мамы, папы и любимой сестренки?",
+        "answer": 4,
+        "options": [
+          "Изумрудный, зеленый, лазурный",
+          "Зеленый, цвет денег, пурпурный",
+          "красный, зеленый, голубой",
+          "Изумрудный, цвет денег, голубой"
+        ]
+      },
+      {
+        "price": 300,
+        "question": "Единственно правильный ответ на гормон сна :)))))))",
+        "answer": 2,
+        "options": [
+          "Серотонин",
+          "Меланин",
+          "Мелатонин"
+        ]
+      },
+      {
+        "price": 100,
+        "question": "Столица Омана",
+        "answer": 1,
+        "options": [
+          "Маскат",
+          "Дофар",
+          "Эль-Батына"
+        ]
+      },
+      {
+        "price": 400,
+        "question": "После чего у гаухар истерика?",
+        "videoLink": "A9.mp4",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "После пранка Лизы и Полины в Сардинии"
+        }
+      },
+      {
+        "price": 400,
+        "question": "С каким днем и почему у тебя ассоциируется этот мем?",
+        "imageLink": "A10.png",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "На арчелле в кафе после того как напились прошлой ночью…"
+        }
+      },
+      {
+        "price": 100,
+        "question": "Что случается сразу после знаменитой фразы Насти “You are either good at bowling or in bed?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "videoLink": "A11.mov"
+        }
+      },
+      {
+        "price": 100,
+        "question": "На Сардинии, Полина выразительно читала текст песни Гаухар, Лизе и Насте. Про что пела Полина?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "шоколадный заяц",
+          "videoLink": "A12.mov"
+        }
       }
     ]
   },
@@ -55,19 +143,9 @@
     "categoryName": "Универ моя жизнь",
     "items": [
       {
-        "price": 100,
-        "question": "Как зовут, и о чем мечтает профессор любимого предмета Гаухар в Падуе?",
-        "answer": 3,
-        "options": [
-          "a",
-          "b",
-          "Болдрини - spunk me mommy"
-        ]
-      },
-      {
         "price": 200,
         "question": "Кого выбрала бы Амира, Шимпанзини Бананини или Лирили Ларила?",
-        "answer": 1,
+        "answer": 2,
         "options": [
           "Шимпанзини Бананини",
           "Лирили Ларила"
@@ -80,27 +158,147 @@
         "options": [
           "Правильно",
           "Неправильно"
-        ]
+        ],
+        "secondPart": {
+          "text": "Меладзе"
+        }
       },
       {
         "price": 400,
-        "question": "test 400",
+        "question": "Какой напиток стал планом Б вместо Jägermeister перед Erasmus-тусовкой",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
+          "Vecchio amaro del capo",
+          "Keglevich",
+          "Nuovo Amaro del Grappa"
         ]
       },
       {
         "price": 500,
-        "question": "test 500",
+        "question": "Сколько часов терпения потребовала от нас защита диплома Шахзоды?",
+        "answer": 2,
+        "options": [
+          "3",
+          "4",
+          "5",
+          "4.5"
+        ]
+      },
+      {
+        "price": 500,
+        "question": "Что Гаухар оставила после себя у Шахзоды в качестве символической платы?",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
-        ]
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Трусы"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Что Настя нам показывала?",
+        "answer": 1,
+        "videoLink": "B6_1.mp4",
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "презентацию с диссом на всех",
+          "videoLink": "B6_2.mp4"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Кого не хватает на этой фотографии?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "B7_1.jpeg",
+        "secondPart": {
+          "text": "Мужик с голым торсом в велосипедном шлеме",
+          "imageLink": "B7_2.PNG"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Что держит эта рука?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "B8_1.jpg",
+        "secondPart": {
+          "text": "видеозвонок с Кьярой",
+          "imageLink": "B8_2.png"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Что мы должны были сделать?",
+        "answer": 1,
+        "videoLink": "B9.mp4",
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Сказать Настину коронную фразу (пау пау чики пау пау)"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Кого из профессоров Гаухар довела до оргазма в Риме",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Галати"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Кто плачет на этой встрече?",
+        "answer": 1,
+        "imageLink": "test.png",
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Винчензо"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Чему Настя учила Гаухар и Полину на портелло?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Блевать"
+        }
+      },
+      {
+        "price": 100,
+        "question": "Как зовут, и о чем мечтает профессор любимого предмета Гаухар в Падуе?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Болдрини - spunk me mommy"
+        }
       }
     ]
   },
@@ -109,54 +307,130 @@
     "items": [
       {
         "price": 100,
-        "question": "test 100",
-        "answer": 1,
+        "question": "День рождения Шайтана",
+        "answer": 2,
         "options": [
-          "a",
-          "b",
-          "c"
+          "4 апреля",
+          "4 марта",
+          "5 апреля",
+          "5 марта"
         ]
       },
       {
         "price": 200,
-        "question": "test 200",
+        "question": "Spot the difference:) как была изменена эта фотография?))",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
-        ]
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "V2_1.png",
+        "secondPart": {
+          "imageLink": "V2_2.HEIC"
+        }
       },
       {
         "price": 300,
-        "question": "test 300",
+        "question": "Любимый напиток Гаухар?",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
-        ]
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Ягерь бомб"
+        }
       },
       {
         "price": 400,
-        "question": "test 400",
+        "question": "Что купила Гаухар, чтобы лицо было более узким?",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
-        ]
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "V4_1.JPG",
+        "secondPart": {
+          "text": "роллер для лица",
+          "imageLink": "V4_2.JPG"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Что у Гаухар зимой постоянно в карманах?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "НОСКИ"
+        }
       },
       {
         "price": 500,
         "question": "Что написано на лбу Гаухар?",
-        "answer": 1,
+        "answer": 2,
         "options": [
+          "ЙУХ",
           "Олег",
-          "Билет",
           "Полина"
         ],
-        "imageLink": "oleg.jpeg"
+        "imageLink": "V6_1.JPG",
+        "secondPart": {
+          "imageLink": "V6_2.jpeg",
+          "text": "ОЛЕГ"
+        }
+      },
+      {
+        "price": 400,
+        "question": "С чем рядом просыпается Гаухар?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "V7_1.jpg",
+        "secondPart": {
+          "text": "Apple Pay",
+          "imageLink": "V7_2.png"
+        }
+      },
+      {
+        "price": 400,
+        "question": "С каким персонажем из «Шрека» ты ассоциируешься для альпинистов?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Дракониха"
+        }
+      },
+      {
+        "price": 400,
+        "question": "Что нужно делать с этим предметом, чтобы всем было смешно?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "ХА-ХА-ХА"
+        }
+      },
+      {
+        "price": 400,
+        "question": "Куда Гаухар ходит покакать?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "На балкон"
+        }
       }
     ]
   },
@@ -165,119 +439,128 @@
     "items": [
       {
         "price": 100,
-        "question": "С чем просыпается Гаухар рядом?",
+        "question": "Что Гаухар ищет?",
         "answer": 1,
         "options": [
           "Правильно",
           "Неправильно"
         ],
-        "imageLink": "phone1.jpg",
+        "videoLink": "G1_1.mp4",
         "secondPart": {
-          "text": "Телефон",
-          "imageLink": "phone2.png"
+          "text": "бумагу для сигарет\\сигареты",
+          "videoLink": "G1_2.MP4"
         }
       },
       {
         "price": 200,
-        "question": "test 200",
+        "question": "На что смотрит Гаухар?",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
-        ]
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "G2_1.jpeg",
+        "secondPart": {
+          "text": "Презентация с ногами и руками Лисы",
+          "imageLink": "G2_2.HEIC"
+        }
+      },
+      {
+        "price": 400,
+        "question": "Что Гаухар ответила?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "videoLink": "G3_1.mp4",
+        "secondPart": {
+          "text": "Доставку хочу",
+          "videoLink": "G3_2.MP4"
+        }
+      },
+      {
+        "price": 500,
+        "question": "От чего Гаухар умирала в истерике тут?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "G4_1.jpeg",
+        "secondPart": {
+          "text": "надела наушники на колено Кьяры, нарисовала лицо, и не могла перестать смеяться",
+          "videoLink": "G4_2.MP4"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Что сейчас сделает Гаухар?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "videoLink": "G5_1.MOV",
+        "secondPart": {
+          "text": "ударит себя",
+          "videoLink": "G5_2.MOV"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Забрала что?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "videoLink": "G6_1.mp4",
+        "secondPart": {
+          "text": "Мою дочку",
+          "videoLink": "G6_2.mov"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Кто там и что они делают руками..?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "videoLink": "G7_1.mp4",
+        "secondPart": {
+          "videoLink": "G7_2.MP4"
+        }
       },
       {
         "price": 300,
         "question": "Что между ног у Кьяры",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
+          "Правильно",
+          "Неправильно"
         ],
-        "imageLink": "chiara.jpg"
-      },
-      {
-        "price": 400,
-        "question": "test 400",
-        "answer": 2,
-        "options": [
-          "a",
-          "b",
-          "c"
-        ],
-        "videoLink": "1.mp4",
+        "imageLink": "G8_1.JPG",
         "secondPart": {
-          "text": "Телефон",
-          "videoLink": "2.mp4"
+          "text": "plush cat toy",
+          "imageLink": "G8_2.JPG"
         }
       },
       {
         "price": 500,
-        "question": "test 500",
+        "question": "Что здесь происходит?",
         "answer": 1,
         "options": [
-          "a",
-          "b",
-          "c"
-        ]
-      }
-    ]
-  },
-  {
-    "categoryName": "Trips",
-    "items": [
-      {
-        "price": 100,
-        "question": "test 100",
-        "answer": 1,
-        "options": [
-          "a",
-          "b",
-          "c"
+          "Правильно",
+          "Неправильно"
         ],
-        "imageLink": "oleg.jpeg"
-      },
-      {
-        "price": 200,
-        "question": "test 200",
-        "answer": 1,
-        "options": [
-          "a",
-          "b",
-          "c"
-        ]
-      },
-      {
-        "price": 300,
-        "question": "test 300",
-        "answer": 1,
-        "options": [
-          "a",
-          "b",
-          "c"
-        ]
-      },
-      {
-        "price": 400,
-        "question": "На Сардинии, Полина выразительно читала текст песни Гаухар, Лизе и Насте. Про что пела Полина?",
-        "answer": 1,
-        "options": [
-          "a",
-          "b",
-          "c"
-        ]
-      },
-      {
-        "price": 500,
-        "question": "test 500",
-        "answer": 1,
-        "options": [
-          "a",
-          "b",
-          "c"
-        ]
+        "imageLink": "asdsd",
+        "secondPart": {
+          "text": "борьба Гаухар с Настей",
+          "videoLink": "asdsads"
+        }
       }
     ]
   }

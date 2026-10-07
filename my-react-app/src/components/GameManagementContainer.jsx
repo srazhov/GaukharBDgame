@@ -55,6 +55,13 @@ export function GameManagementContainer() {
     SaveSelectedOptions(selectedPunishments, true);
   }, [selectedPunishments]);
 
+  useEffect(() => {
+    if (!showModal) {
+      setIsRewardScreen(false);
+      setRewardOptionSelected(false);
+    }
+  }, [showModal]);
+
   const handleTileClick = (item, catIndex, itemIndex) => {
     setActiveModalItem({ item: item, categoryId: catIndex, itemId: itemIndex });
     setShowModal(true);
@@ -66,9 +73,7 @@ export function GameManagementContainer() {
       if (rewardsData[itemIndex - 999]?.secondPart && !rewardOptionSelected) {
         setRewardOptionSelected(true);
       } else {
-        setIsRewardScreen(false);
         setShowModal(false);
-        setRewardOptionSelected(false);
       }
     } else {
       UpdateSelectedOption(
