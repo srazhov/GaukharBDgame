@@ -121,7 +121,7 @@
           "Неправильно"
         ],
         "secondPart": {
-          "videoLink": "A11.mov"
+          "videoLink": "A11.mp4"
         }
       },
       {
@@ -134,7 +134,7 @@
         ],
         "secondPart": {
           "text": "шоколадный заяц",
-          "videoLink": "A12.mov"
+          "videoLink": "A12.mp4"
         }
       }
     ]
@@ -501,10 +501,10 @@
           "Правильно",
           "Неправильно"
         ],
-        "videoLink": "G5_1.MOV",
+        "videoLink": "G5_1.mp4",
         "secondPart": {
           "text": "ударит себя",
-          "videoLink": "G5_2.MOV"
+          "videoLink": "G5_2.mp4"
         }
       },
       {
@@ -518,7 +518,7 @@
         "videoLink": "G6_1.mp4",
         "secondPart": {
           "text": "Мою дочку",
-          "videoLink": "G6_2.mov"
+          "videoLink": "G6_2.mp4"
         }
       },
       {
