@@ -563,6 +563,90 @@
         "secondPart": {
           "videoLink": "G9_2.mp4"
         }
+      },
+      {
+        "price": 500,
+        "question": "Что сейчас скажет Мама?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "videoLink": "G10_1.mp4",
+        "secondPart": {
+          "videoLink": "G10_2.mp4",
+          "text": "ПИВОО"
+        }
+      },
+      {
+        "price": 500,
+        "question": "С чем стоит Мама?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "G11_1.jpeg",
+        "secondPart": {
+          "imageLink": "G11_2.jpg",
+          "text": "Грибы"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Кто стоит справа на фотке?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "G12_1.jpg",
+        "secondPart": {
+          "imageLink": "G12_2.jpg",
+          "text": "Вика"
+        }
+      },
+      {
+        "price": 500,
+        "question": "С какого класса я выпускаюсь?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "G13_1.jpg",
+        "secondPart": {
+          "imageLink": "G13_2.jpg",
+          "text": "С 9"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Куда смотрят Санди и Гаухар",
+        "answer": 3,
+        "options": [
+          "На стену",
+          "На палец",
+          "Их позвали"
+        ],
+        "imageLink": "G14.jpg",
+        "secondPart": {
+          "text": "Их позвали"
+        }
+      },
+      {
+        "price": 500,
+        "question": "Что Гаухар держит в руках?",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "G15_1.jpg",
+        "secondPart": {
+          "text": "Султана",
+          "imageLink": "G15_2.jpg"
+        }
       }
     ]
   }
