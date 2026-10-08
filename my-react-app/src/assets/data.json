@@ -24,7 +24,8 @@
           "Неправильно"
         ],
         "secondPart": {
-          "text": "Табак Old Holborn"
+          "text": "Табак Old Holborn",
+          "imageLink": "A2.jpeg"
         }
       },
       {
@@ -300,8 +301,10 @@
           "Правильно",
           "Неправильно"
         ],
+        "imageLink": "B12_1.jpeg",
         "secondPart": {
-          "text": "Блевать"
+          "text": "Блевать",
+          "imageLink": "B12_2.jpeg"
         }
       },
       {
@@ -445,6 +448,7 @@
           "Неправильно"
         ],
         "secondPart": {
+          "imageLink": "V10.jpeg",
           "text": "На балкон"
         }
       },
