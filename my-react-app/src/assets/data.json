@@ -137,6 +137,20 @@
           "text": "шоколадный заяц",
           "videoLink": "A12.mp4"
         }
+      },
+      {
+        "price": 500,
+        "question": "Что они делают??",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "imageLink": "A13_1.jpg",
+        "secondPart": {
+          "text": "Надувают колесо",
+          "imageLink": "A13_2.jpg"
+        }
       }
     ]
   },
@@ -432,6 +446,19 @@
         ],
         "secondPart": {
           "text": "На балкон"
+        }
+      },
+      {
+        "price": 150,
+        "question": "Любимая стратегия Гаухар в катане",
+        "answer": 3,
+        "options": [
+          "Торговля",
+          "Строительство городов",
+          "Special карты"
+        ],
+        "secondPart": {
+          "text": "Special карты"
         }
       }
     ]
