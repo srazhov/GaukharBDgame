@@ -9,10 +9,12 @@
         ],
         "imageLink": "reward_1_1.jpeg",
         "imageLink2": "reward_1_1_second.jpg",
+        "videoLink": "reward_1_1.mp4",
         "secondPart": {
             "text": "А ты уже получила подарок свой))",
             "videoLink": "reward_1_2.mp4",
-            "imageLink": "reward_1_2.jpeg"
+            "imageLink": "reward_1_2.jpeg",
+            "imageLink2": "reward_1_3.jpg"
         }
     },
     {
