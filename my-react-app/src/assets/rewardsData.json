@@ -46,9 +46,11 @@
         "options": [
             "Забрать подарок"
         ],
+        "videoLink": "reward_4_1.mp4",
         "imageLink": "reward_4_1_1.jpeg",
         "imageLink2": "reward_4_1_2.jpeg",
         "secondPart": {
+            "videoLink": "reward_4_2.mp4",
             "imageLink": "reward_4_2_1.jpeg",
             "imageLink2": "reward_4_2_2.jpeg"
         }
