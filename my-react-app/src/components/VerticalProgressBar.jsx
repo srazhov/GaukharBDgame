@@ -42,6 +42,7 @@ export default function VerticalProgressBar({
         return milestone;
       }),
     );
+
   }, [currentScore]);
 
   const getProgress = () => {
@@ -69,7 +70,7 @@ export default function VerticalProgressBar({
 
   return (
     <div className="progress-container">
-      <div className="progress-header">Current Progress: {getProgress()}%</div>
+      <div className="progress-header">{currentScore} points out of {maxScore}</div>
 
       <div className="progress-track">
         <div

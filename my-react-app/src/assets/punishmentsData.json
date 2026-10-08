@@ -3,7 +3,7 @@
         "categoryName": "Физические наказания",
         "items": [
             {
-                "price": 1500,
+                "price": 3500,
                 "question": "Recreate the Gaukhar’s dance.",
                 "answer": 1,
                 "options": [
@@ -12,7 +12,7 @@
                 ]
             },
             {
-                "price": 1000,
+                "price": 2500,
                 "question": "Сделай 10 отжимании",
                 "answer": 1,
                 "options": [
@@ -21,7 +21,7 @@
                 ]
             },
             {
-                "price": 750,
+                "price": 1500,
                 "question": "Сделай 10 приседании",
                 "answer": 1,
                 "options": [
@@ -35,7 +35,7 @@
         "categoryName": "Моральные наказания",
         "items": [
             {
-                "price": 3000,
+                "price": 5000,
                 "question": "Назови 10 вещей которые ты любишь в себе",
                 "answer": 1,
                 "options": [
@@ -44,7 +44,7 @@
                 ]
             },
             {
-                "price": 2500,
+                "price": 3000,
                 "question": "Сделай тоже самое что и здесь",
                 "answer": 1,
                 "options": [
