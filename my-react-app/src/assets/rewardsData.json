@@ -36,13 +36,13 @@
         "question": "Место, с которого открылась новая глава в твоей жизни",
         "answer": 1,
         "options": [
-            "Забрать подарок"
+            "Забрать милллилюсенький подарок (но с большой ценностью)"
         ],
         "imageLink": "reward_3_1.jpeg",
         "imageLink2": "reward_3_2.jpeg",
         "secondPart": {
-        "imageLink": "reward_3_3.jpeg",
-        "imageLink2": "reward_3_4.jpeg"
+            "imageLink": "reward_3_3.jpeg",
+            "imageLink2": "reward_3_4.jpeg"
         }
     },
     {
@@ -51,7 +51,7 @@
         "question": "Уже на четверочку закрыла сегодняшний предмет)",
         "answer": 1,
         "options": [
-            "Забрать подарок"
+            "Забрать подарок... И наши сердца"
         ],
         "videoLink": "reward_4_1.mp4",
         "imageLink": "reward_4_1_1.jpeg",
@@ -80,11 +80,18 @@
     {
         "title": "Uralsk",
         "percent": 100,
-        "question": "Congratulations!",
+        "question": "С ДНЕМ РОЖДЕНИЯ, ГАУХАР!",
         "answer": 1,
         "options": [
-            "Забрать подарок"
+            "Забрать самый лучший подарок в мире, нас"
         ],
-        "imageLink": "phone1.jpg"
+        "videoLink": "V6_1.mp4",
+        "imageLink": "reward_6_1.jpg",
+        "imageLink2": "reward_6_2.jpg",
+        "secondPart": {
+            "videoLink": "V6_2.mp4",
+            "imageLink": "reward_6_3.jpeg",
+            "imageLink2": "reward_6_4.jpg"
+        }
     }
 ]
