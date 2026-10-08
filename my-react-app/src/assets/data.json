@@ -460,6 +460,20 @@
         "secondPart": {
           "text": "Special карты"
         }
+      },
+      {
+        "price": 400,
+        "question": "Что Гаухар тут делает?",
+        "imageLink": "V12_1.jpg",
+        "answer": 1,
+        "options": [
+          "Правильно",
+          "Неправильно"
+        ],
+        "secondPart": {
+          "text": "Обнимает акулу",
+          "imageLink": "V12_2.jpg"
+        }
       }
     ]
   },

@@ -38,10 +38,11 @@
         "options": [
             "Забрать подарок"
         ],
-        "imageLink": "phone1.jpg",
+        "imageLink": "reward_3_1.jpeg",
+        "imageLink2": "reward_3_2.jpeg",
         "secondPart": {
-            "text": "Телефон",
-            "imageLink": "phone2.png"
+        "imageLink": "reward_3_3.jpeg",
+        "imageLink2": "reward_3_4.jpeg"
         }
     },
     {
