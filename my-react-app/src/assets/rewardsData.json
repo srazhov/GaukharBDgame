@@ -11,23 +11,29 @@
         "imageLink2": "reward_1_1_second.jpg",
         "secondPart": {
             "text": "А ты уже получила подарок свой))",
-            "videoLink": "reward_1_2.mp4"
+            "videoLink": "reward_1_2.mp4",
+            "imageLink": "reward_1_2.jpeg"
         }
     },
     {
         "title": "Rome",
         "percent": 30,
-        "question": "Congratulations!",
+        "question": "Вроде ближе, но еще так далеко...",
         "answer": 1,
         "options": [
-            "Забрать подарок"
+            "Забрать подарочек (и посмотреть на красивых девушек)"
         ],
-        "imageLink": "phone1.jpg"
+        "imageLink": "reward_2_1.jpeg",
+        "imageLink2": "reward_2_2.jpeg",
+        "secondPart": {
+            "imageLink": "reward_2_3.jpeg",
+            "imageLink2": "reward_2_4.jpeg"
+        }
     },
     {
         "title": "Padova",
         "percent": 45,
-        "question": "Keep going!",
+        "question": "Место, с которого открылась новая глава в твоей жизни",
         "answer": 1,
         "options": [
             "Забрать подарок"
@@ -41,7 +47,7 @@
     {
         "title": "Saint-Petersburg",
         "percent": 70,
-        "question": "Congratulations!",
+        "question": "Уже на четверочку закрыла сегодняшний предмет)",
         "answer": 1,
         "options": [
             "Забрать подарок"
@@ -58,10 +64,10 @@
     {
         "title": "Shymkent",
         "percent": 85,
-        "question": "You are almost there!",
+        "question": "This city is almost as hot as YOU",
         "answer": 1,
         "options": [
-            "Забрать подарок"
+            "Забрать подарок (и девочек)"
         ],
         "imageLink": "reward_5_1_1.jpeg",
         "imageLink2": "reward_5_1_2.jpeg",
